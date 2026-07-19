@@ -27,15 +27,29 @@ public final class DecodeConfig {
     public static final double OUTTAKE_POWER = 0.40;
     public static final double SHOOT_FEED_POWER = -1.00;
 
-    // External velocity PIDF: ShooterL encoder is the feedback source and the same power is sent
+    // External velocity PIDF: ShooterR encoder is the feedback source and the same power is sent
     // to ShooterL/ShooterR. Tune these with Motor PIDF Tuner (Panels).
     public static final double SHOOTER_VELOCITY_TOLERANCE_TICKS_PER_SECOND = 50;
-    public static final long DEFAULT_FIRE_DURATION_MS = 350;
-    public static final double SHOOTER_KP = 0.006;
+    public static final long DEFAULT_FIRE_DURATION_MS = 500;
+    public static final double SHOOTER_KP = 1;
     public static final double SHOOTER_KI = 0;
     public static final double SHOOTER_KD = 0;
     public static final double SHOOTER_KF = 0.0004;
     public static final double SHOOTER_INTEGRAL_LIMIT = 0.25;
+
+    // Autonomous sequencing. These preserve the old AutoCinco feed time and pickup speeds while
+    // keeping every wait non-blocking. A shot that never reaches speed is skipped at the timeout.
+    public static final long AUTO_FIRE_DURATION_MS = 925;
+    public static final long AUTO_SHOT_TIMEOUT_MS = 4_000;
+    public static final long AUTO_PATH_TIMEOUT_MS = 5_000;
+    public static final double AUTO_PICKUP_ONE_MAX_POWER = 0.70;
+    public static final double AUTO_PICKUP_TWO_MAX_POWER = 0.40;
+    public static final double AUTO_PICKUP_THREE_MAX_POWER = 0.45;
+    // Keep the original AutoCinco shot until Alliance goals and SHOT_TABLE are measured.
+    // The old 2900 RPM target with a 28 tick/rev encoder equals about 1353 ticks/second.
+    public static final boolean AUTO_USE_DISTANCE_SHOT_TABLE = false;
+    public static final double AUTO_FIXED_SHOT_VELOCITY_TICKS_PER_SECOND = 1353;
+    public static final double AUTO_FIXED_PITCH_POSITION = 0.355;
 
     // Shooter points toward the back of the chassis.
     public static final double SHOOTER_DIRECTION_FROM_ROBOT_FORWARD_RAD = Math.PI;
@@ -63,9 +77,13 @@ public final class DecodeConfig {
      */
     public static final double[][] SHOT_TABLE = {
             // Servo placeholders are the old mirrored rs values, clipped to the new safe range.
-            {36, 1260, 0.520},
-            {60, 1353, 0.355},
-            {84, 1680, 0.330},
-            {108, 2007, 0.200}
+//            {36, 1260, 0.520},
+//            {60, 1353, 0.355},
+//            {84, 1680, 0.330},
+//            {108, 2007, 0.200}
+            {38.98, 1435, 0.2},
+            {62.99, 1410, 0.325},
+            {51.18, 1435, 0.3},
+            {83.07, 1785, 0.49}
     };
 }
