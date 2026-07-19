@@ -56,8 +56,8 @@ public final class DecodeConfig {
 
     // Chassis heading controller. Output is Pedro's normalized turn input [-1, 1].
     // TODO: Tune AIM_KP and AIM_KD with the robot on carpet.
-    public static final double AIM_KP = 1.55;
-    public static final double AIM_KD = 0.08;
+    public static final double AIM_KP = 0.7;
+    public static final double AIM_KD = 0.015;
     public static final double AIM_MAX_TURN = 0.70;
     public static final double AIM_MIN_TURN = 0.07;
     public static final double AIM_TOLERANCE_RAD = Math.toRadians(1.5);
@@ -81,9 +81,10 @@ public final class DecodeConfig {
 //            {60, 1353, 0.355},
 //            {84, 1680, 0.330},
 //            {108, 2007, 0.200}
-            {38.98, 1435, 0.2},
-            {62.99, 1410, 0.325},
-            {51.18, 1435, 0.3},
-            {83.07, 1785, 0.49}
+            {38.58, 1285, 0.2},
+            {47.64, 1335, 0.22},
+            {66.93, 1410, 0.28},
+            {83.07, 1585, 0.515},
+            {127.95, 1860, 0.52}
     };
 }
