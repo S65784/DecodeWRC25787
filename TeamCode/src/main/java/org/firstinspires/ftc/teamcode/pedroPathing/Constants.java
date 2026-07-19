@@ -25,15 +25,15 @@ public final class Constants {
     }
 
     public static final FollowerConstants followerConstants = new FollowerConstants()
-            .mass(12.806)
+            .mass(8.9)
             .forwardZeroPowerAcceleration(-29)
             .lateralZeroPowerAcceleration(-62)
             .translationalPIDFCoefficients(new PIDFCoefficients(0.3, 0, 0.027, 0.02))
             .secondaryTranslationalPIDFCoefficients(
-                    new PIDFCoefficients(0.21, 0.000076, 0.03, 0.017))
+                    new PIDFCoefficients(0.25, 0.000076, 0.03, 0.017))
             .headingPIDFCoefficients(new PIDFCoefficients(0.7, 0.018, 0.015, 0.025))
             .secondaryHeadingPIDFCoefficients(
-                    new PIDFCoefficients(0.8, 0.0001, 0.02, 0.02))
+                    new PIDFCoefficients(0.9, 0.0001, 0.02, 0.02))
             .drivePIDFCoefficients(
                     new FilteredPIDFCoefficients(0.009, 0.0007, 0.00000001, 0.6, 0.0003))
             .centripetalScaling(0.001);
@@ -48,21 +48,21 @@ public final class Constants {
             .leftRearMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .xVelocity(80.3)
-            .yVelocity(64);
+            .xVelocity(86)
+            .yVelocity(69);
 
     public static final PinpointConstants localizerConstants = new PinpointConstants()
             // TODO: Measure both offsets again after the Pinpoint pods are mounted permanently.
-            .forwardPodY(0)
-            .strafePodX(-2.165354)
+            .forwardPodY(-0.978)
+            .strafePodX(-3.103)
             .distanceUnit(DistanceUnit.INCH)
             .hardwareMapName("pinpoint")
             .encoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD)
-            .forwardEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD)
+            .forwardEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED)
             .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED);
 
     public static final PathConstraints pathConstraints =
-            new PathConstraints(0.99, 100, 0.5, 0.5);
+            new PathConstraints(0.99, 100, 0.5, 0.2);
 
     public static Follower createFollower(HardwareMap hardwareMap) {
         return new FollowerBuilder(followerConstants, hardwareMap)
