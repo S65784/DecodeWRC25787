@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.decode.control;
 
+import com.bylazar.configurables.annotations.Configurable;
 import com.pedropathing.geometry.Pose;
 
 import org.firstinspires.ftc.teamcode.decode.config.DecodeConfig;
@@ -10,13 +11,24 @@ import org.firstinspires.ftc.teamcode.decode.util.MathUtil;
  *
  * <p>This controller only produces a turn value; driver translation remains available.</p>
  */
+@Configurable
 public final class AutoAimController {
+    /**
+     * Live Panels copies of the tested defaults in DecodeConfig.
+     *
+     * <p>Panels changes these fields immediately while the TeleOp is running. Copy final tested
+     * values into DecodeConfig manually if they should become the next app-build defaults.</p>
+     */
+    public static double AIM_KP = DecodeConfig.AIM_KP;
+    public static double AIM_KD = DecodeConfig.AIM_KD;
+
     private final Pose target;
     private boolean active;
     private boolean firstUpdate = true;
     private long lastUpdateNanos;
     private double previousError;
     private double farOffsetRadians;
+    private double farOffsetMinDistanceInches = DecodeConfig.FAR_SHOT_DISTANCE_INCHES;
     private double targetHeading;
     private double headingError;
     private double distance;
@@ -49,7 +61,7 @@ public final class AutoAimController {
         distance = Math.hypot(dx, dy);
 
         double goalBearing = Math.atan2(dy, dx);
-        double appliedOffset = distance >= DecodeConfig.FAR_SHOT_DISTANCE_INCHES
+        double appliedOffset = distance >= farOffsetMinDistanceInches
                 ? farOffsetRadians
                 : 0;
         targetHeading = MathUtil.normalizeRadians(
@@ -78,7 +90,7 @@ public final class AutoAimController {
             return 0;
         }
 
-        double output = DecodeConfig.AIM_KP * headingError + DecodeConfig.AIM_KD * derivative;
+        double output = AIM_KP * headingError + AIM_KD * derivative;
         output = MathUtil.clamp(output, -DecodeConfig.AIM_MAX_TURN, DecodeConfig.AIM_MAX_TURN);
 
         if (Math.abs(output) < DecodeConfig.AIM_MIN_TURN) {
@@ -102,6 +114,10 @@ public final class AutoAimController {
 
     public double getFarOffsetRadians() {
         return farOffsetRadians;
+    }
+
+    public void setFarOffsetMinDistanceInches(double distanceInches) {
+        farOffsetMinDistanceInches = Math.max(0, distanceInches);
     }
 
     public double getTargetHeading() {

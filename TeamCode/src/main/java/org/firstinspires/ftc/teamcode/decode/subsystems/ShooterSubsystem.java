@@ -15,7 +15,7 @@ import org.firstinspires.ftc.teamcode.decode.shooting.ShotSolution;
  * Dual-flywheel shooter with one feedback encoder, automatic speed interlock, pitch control,
  * and gate timing.
  *
- * <p>A fire request waits until the ShooterL encoder is within the configured velocity tolerance.
+ * <p>A fire request waits until the ShooterR encoder is within the configured velocity tolerance.
  * Once ready, the gate opens and the single Intake motor feeds immediately.</p>
  */
 public final class ShooterSubsystem {
@@ -49,7 +49,9 @@ public final class ShooterSubsystem {
         rightShooter.setDirection(DcMotorSimple.Direction.REVERSE);
         configureFlywheel(leftShooter);
         configureFlywheel(rightShooter);
-        flywheelController = new SharedFlywheelController(leftShooter, rightShooter);
+        // ShooterR is the only encoder feedback source. ShooterL receives the exact same
+        // controller power as a no-feedback follower on the shared mechanical shaft.
+        flywheelController = new SharedFlywheelController(rightShooter, leftShooter);
         flywheelController.setGains(
                 DecodeConfig.SHOOTER_KP,
                 DecodeConfig.SHOOTER_KI,
@@ -92,7 +94,7 @@ public final class ShooterSubsystem {
     }
 
     public void requestFire() {
-        requestFire(DecodeConfig.DEFAULT_FIRE_DURATION_MS);
+        requestFire(defaultFireDurationForDistance(solution.distanceInches()));
     }
 
     /**
@@ -104,6 +106,32 @@ public final class ShooterSubsystem {
         if (fireState == FireState.IDLE) {
             fireState = FireState.WAITING_FOR_SPEED;
         }
+    }
+
+    private static long defaultFireDurationForDistance(double distanceInches) {
+        double nearestDistance = Double.POSITIVE_INFINITY;
+        double farthestDistance = Double.NEGATIVE_INFINITY;
+        for (double[] row : DecodeConfig.SHOT_TABLE) {
+            nearestDistance = Math.min(nearestDistance, row[0]);
+            farthestDistance = Math.max(farthestDistance, row[0]);
+        }
+
+        if (!Double.isFinite(distanceInches)
+                || !Double.isFinite(nearestDistance)
+                || !Double.isFinite(farthestDistance)
+                || farthestDistance <= nearestDistance) {
+            return DecodeConfig.DEFAULT_FIRE_DURATION_MS;
+        }
+
+        double fraction = Range.clip(
+                (distanceInches - nearestDistance) / (farthestDistance - nearestDistance),
+                0,
+                1);
+        return Math.round(
+                DecodeConfig.DEFAULT_FIRE_DURATION_MS
+                        + fraction
+                        * (DecodeConfig.DEFAULT_FAR_FIRE_DURATION_MS
+                        - DecodeConfig.DEFAULT_FIRE_DURATION_MS));
     }
 
     public void cancelFire() {
@@ -150,16 +178,12 @@ public final class ShooterSubsystem {
         }
         double target = solution.velocityTicksPerSecond();
         double tolerance = DecodeConfig.SHOOTER_VELOCITY_TOLERANCE_TICKS_PER_SECOND;
-        return Math.abs(getLeftVelocity() - target) <= tolerance;
+        return Math.abs(getRightVelocity() - target) <= tolerance;
     }
 
-    public double getLeftVelocity() {
-        return flywheelController.getMeasuredVelocity();
-    }
-
-    /** Diagnostic only: ShooterR has no feedback encoder and is not used by the interlock. */
+    /** ShooterR is the only encoder feedback source and drives the speed interlock. */
     public double getRightVelocity() {
-        return Math.abs(rightShooter.getVelocity());
+        return flywheelController.getMeasuredVelocity();
     }
 
     public double getAppliedPower() {

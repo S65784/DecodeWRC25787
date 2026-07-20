@@ -23,14 +23,16 @@ public final class DecodeConfig {
     public static final double PITCH_MAX_POSITION = 0.52;
 
     // The single Intake motor handles collecting, ejecting, and feeding.
-    public static final double INTAKE_POWER = -0.80;
+    public static final double INTAKE_POWER = -1;
     public static final double OUTTAKE_POWER = 0.40;
     public static final double SHOOT_FEED_POWER = -1.00;
 
     // External velocity PIDF: ShooterR encoder is the feedback source and the same power is sent
     // to ShooterL/ShooterR. Tune these with Motor PIDF Tuner (Panels).
     public static final double SHOOTER_VELOCITY_TOLERANCE_TICKS_PER_SECOND = 50;
-    public static final long DEFAULT_FIRE_DURATION_MS = 500;
+    // Manual queued-fire duration is interpolated across the SHOT_TABLE distance range.
+    public static final long DEFAULT_FIRE_DURATION_MS = 300; // Nearest table distance.
+    public static final long DEFAULT_FAR_FIRE_DURATION_MS = 420; // Farthest table distance.
     public static final double SHOOTER_KP = 1;
     public static final double SHOOTER_KI = 0;
     public static final double SHOOTER_KD = 0;
@@ -39,9 +41,10 @@ public final class DecodeConfig {
 
     // Autonomous sequencing. These preserve the old AutoCinco feed time and pickup speeds while
     // keeping every wait non-blocking. A shot that never reaches speed is skipped at the timeout.
-    public static final long AUTO_FIRE_DURATION_MS = 925;
-    public static final long AUTO_SHOT_TIMEOUT_MS = 4_000;
-    public static final long AUTO_PATH_TIMEOUT_MS = 5_000;
+    public static final long AUTO_FIRE_DURATION_MS = 400; // Far-side AutoDos/AutoSiete.
+    public static final long AUTO_NEAR_FIRE_DURATION_MS = 350; // Close-side AutoCero/AutoCinco.
+    public static final long AUTO_SHOT_TIMEOUT_MS = 1000;
+    public static final long AUTO_PATH_TIMEOUT_MS = 3580;
     public static final double AUTO_PICKUP_ONE_MAX_POWER = 0.70;
     public static final double AUTO_PICKUP_TWO_MAX_POWER = 0.40;
     public static final double AUTO_PICKUP_THREE_MAX_POWER = 0.45;
@@ -56,8 +59,8 @@ public final class DecodeConfig {
 
     // Chassis heading controller. Output is Pedro's normalized turn input [-1, 1].
     // TODO: Tune AIM_KP and AIM_KD with the robot on carpet.
-    public static final double AIM_KP = 0.7;
-    public static final double AIM_KD = 0.015;
+    public static final double AIM_KP = 1.15;
+    public static final double AIM_KD = 0.1;
     public static final double AIM_MAX_TURN = 0.70;
     public static final double AIM_MIN_TURN = 0.07;
     public static final double AIM_TOLERANCE_RAD = Math.toRadians(1.5);
@@ -85,6 +88,7 @@ public final class DecodeConfig {
             {47.64, 1335, 0.22},
             {66.93, 1410, 0.28},
             {83.07, 1585, 0.515},
-            {127.95, 1860, 0.52}
+            {127.95, 1860, 0.52},
+            {145.67, 1985, 0.52}
     };
 }

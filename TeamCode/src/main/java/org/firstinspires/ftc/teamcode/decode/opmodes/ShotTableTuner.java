@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.decode.opmodes;
 
+import com.bylazar.configurables.PanelsConfigurables;
+import com.bylazar.configurables.annotations.Configurable;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
@@ -16,8 +18,12 @@ import org.firstinspires.ftc.teamcode.decode.util.RisingEdge;
  * <p>Measure the robot-to-goal distance with a tape measure, select the same distance here, then
  * adjust velocity and pitch until shots are repeatable.</p>
  */
+@Configurable
 @TeleOp(name = "DECODE Shot Table Tuner", group = "Calibration")
 public final class ShotTableTuner extends OpMode {
+    /** Live test-only copy; changing it in Panels does not modify DecodeConfig. */
+    public static double TEST_FIRE_DURATION_MS = DecodeConfig.DEFAULT_FIRE_DURATION_MS;
+
     private final RisingEdge velocityUp = new RisingEdge();
     private final RisingEdge velocityDown = new RisingEdge();
     private final RisingEdge pitchUp = new RisingEdge();
@@ -40,7 +46,10 @@ public final class ShotTableTuner extends OpMode {
     public void init() {
         intake = new IntakeSubsystem(hardwareMap);
         shooter = new ShooterSubsystem(hardwareMap, intake);
+        TEST_FIRE_DURATION_MS = DecodeConfig.DEFAULT_FIRE_DURATION_MS;
+        PanelsConfigurables.INSTANCE.refreshClass(this);
         telemetry.addLine("Place robot at a measured distance before firing.");
+        telemetry.addLine("TEST_FIRE_DURATION_MS is live-tunable in Panels and test-only.");
         telemetry.update();
     }
 
@@ -80,7 +89,8 @@ public final class ShotTableTuner extends OpMode {
             shooter.toggleEnabled();
         }
         if (fire.update(gamepad1.a)) {
-            shooter.requestFire();
+            long testFireDurationMs = Math.max(1, Math.round(TEST_FIRE_DURATION_MS));
+            shooter.requestFire(testFireDurationMs);
         }
         if (markRow.update(gamepad1.start)) {
             markedRow = String.format(
@@ -90,21 +100,36 @@ public final class ShotTableTuner extends OpMode {
                     pitchPosition);
         }
 
+        // Match competition TeleOp intake controls. Shooter feed remains the highest-priority
+        // IntakeSubsystem command, so a queued shot overrides these buttons while FEEDING.
+        if (gamepad1.right_bumper && !gamepad1.left_bumper) {
+            intake.setManualMode(IntakeSubsystem.Mode.INTAKE);
+        } else if (gamepad1.left_bumper && !gamepad1.right_bumper) {
+            intake.setManualMode(IntakeSubsystem.Mode.OUTTAKE);
+        } else {
+            intake.setManualMode(IntakeSubsystem.Mode.IDLE);
+        }
+
         shooter.update();
         intake.update();
 
         telemetry.addData("Distance label", "%.1f in", testDistanceInches);
         telemetry.addData("Target velocity", "%.0f ticks/s", velocityTicksPerSecond);
         telemetry.addData("Pitch position", "%.3f", pitchPosition);
-        telemetry.addData("Actual ShooterL", "%.0f ticks/s", shooter.getLeftVelocity());
+        telemetry.addData("Actual ShooterR", "%.0f ticks/s", shooter.getRightVelocity());
         telemetry.addData("Shared flywheel power", "%.3f", shooter.getAppliedPower());
         telemetry.addData("Speed interlock", shooter.isAtSpeed() ? "READY" : "NOT READY");
         telemetry.addData("Fire state", shooter.getFireState());
+        telemetry.addData(
+                "Test fire duration",
+                "%d ms (Panels; not saved)",
+                Math.max(1, Math.round(TEST_FIRE_DURATION_MS)));
         telemetry.addData("COPY THIS ROW", markedRow);
         telemetry.addLine("Dpad up/down: velocity +/-25 ticks/s");
         telemetry.addLine("Dpad right/left: pitch +/-0.005");
         telemetry.addLine("B/X: distance label +/-6 in");
         telemetry.addLine("Y: flywheel on/off, A: queued fire, START: mark row");
+        telemetry.addLine("RB: intake -0.8, LB: outtake +0.4, release: stop");
         telemetry.update();
     }
 

@@ -8,17 +8,20 @@ import com.pedropathing.geometry.Pose;
 public enum Alliance {
     RED(
             // TODO: Confirm the preferred horizontal aim point inside the red goal.
-            new Pose(134, 138),
+            //new Pose(134, 138),
+            //127.87787182587668, 135.71825876662638更近上端
+//            new Pose(129, 131.78),
+            new Pose(130, 135),
             // TODO: Replace reset poses with taped, repeatable field locations.
-            new Pose(94, 108, Math.toRadians(0)),
-            new Pose(100, 99.8, Math.toRadians(37.2)),
+            new Pose(12.999, 7.328, Math.toRadians(180)),//humanzone
+            new Pose(144-16.61, 77.92, Math.toRadians(0)),//neargate
             new Pose(94, 108, Math.toRadians(0))
     ),
     BLUE(
             // TODO: Confirm the preferred horizontal aim point inside the blue goal.
-            new Pose(10, 138),
-            new Pose(50, 108, Math.toRadians(180)),
-            new Pose(44, 99.8, Math.toRadians(142.8)),
+            new Pose(144-128, 133),
+            new Pose(144-12.999, 7.328, Math.toRadians(0)),
+            new Pose(16.61, 77.92, Math.toRadians(180)),
             new Pose(50, 108, Math.toRadians(180))
     );
 
