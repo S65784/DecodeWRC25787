@@ -29,7 +29,12 @@ public final class RedAutoCinco extends PathStateAutoBase {
 
     // Gate 1 coordinates remain unchanged.
     private final Pose c04GateOne = pose(104.93227091633466, 69.4183266932271,270);//114.93227091633466
-    private final Pose p04GateOne  = pose(126, 72, 0);
+    private final Pose p04GateOne  = pose(126.2, 72, 0);
+    // Dwell held after the gate path ends, before leaving for the scoring pose. The gate path
+    // holds its end pose, so the chassis keeps pressing the gate for this whole time.
+    // TODO: Measure on the field. Long dwells stall the drive and sag the battery right before
+    // a shot, which can push the next spin-up past AUTO_SHOT_TIMEOUT_MS.
+    private static final long GATE_ONE_DWELL_MS = 1200;
 
     private final Pose p05RowOneScore = pose(84.000, 83.000, 227.726311);
     private final ShotParameters shot05RowOne = shot(1408, 0.2782);
@@ -41,7 +46,9 @@ public final class RedAutoCinco extends PathStateAutoBase {
 
     // Gate 2 coordinates remain unchanged.
     private final Pose c08GateTwo = pose(140-34, 52.91444600280506, 270);//140-20
-    private final Pose p08GateTwo = pose(125.5, 72, 0);
+    private final Pose p08GateTwo = pose(126.5, 72, 0);
+    // TODO: Measure on the field. See the note on GATE_ONE_DWELL_MS.
+    private static final long GATE_TWO_DWELL_MS = 2500;
 
     private final Pose c09RowTwoScore = pose(99.000, 60.000, 0);
     private final Pose p09RowTwoScore = pose(84.000, 83.000, 227.726311);
@@ -49,7 +56,7 @@ public final class RedAutoCinco extends PathStateAutoBase {
 
     // Row 3: no gate push.
     private final Pose c10RowThreeReady = pose(86.83790322580646, 42.416129032258056, 0);
-    private final Pose p10RowThreeReady = pose(85, 36.000, 0);
+    private final Pose p10RowThreeReady = pose(87.5, 36.000, 0);
     private final Pose p11RowThreePickup = pose(132.000, 36.000, 0);
     private final Pose p12FinalScore = pose(84.077, 107.923, 211.067610);
     private final ShotParameters shot12Final = shot(1348, 0.2300);
@@ -132,11 +139,18 @@ public final class RedAutoCinco extends PathStateAutoBase {
                 if (pathFinishedOrTimedOut()) {
                     stopIntake();
                     follow(gateOne, "04 PUSH GATE 1", p04GateOne, true);
+                    setPathState(450);
+                }
+                break;
+            case 450:
+                // Entering state 5 restarts the state timer, so the dwell below is measured
+                // from the moment the gate path ended instead of from when it started.
+                if (pathFinishedOrTimedOut()) {
                     setPathState(5);
                 }
                 break;
             case 5:
-                if (pathFinishedOrTimedOut()) {
+                if (waitFinished(GATE_ONE_DWELL_MS)) {
                     prepareShotForPose(p05RowOneScore, shot05RowOne);
                     follow(rowOneScore, "05 GATE 1 -> ROW 1 SCORE", p05RowOneScore, true);
                     setPathState(6);
@@ -165,11 +179,18 @@ public final class RedAutoCinco extends PathStateAutoBase {
                 if (pathFinishedOrTimedOut()) {
                     stopIntake();
                     follow(gateTwo, "08 PUSH GATE 2", p08GateTwo, true);
+                    setPathState(950);
+                }
+                break;
+            case 950:
+                // Same split as state 450: this state only exists to restart the state timer
+                // when the gate path ends, so state 10 can dwell from that instant.
+                if (pathFinishedOrTimedOut()) {
                     setPathState(10);
                 }
                 break;
             case 10:
-                if (pathFinishedOrTimedOut()) {
+                if (waitFinished(GATE_TWO_DWELL_MS)) {
                     prepareShotForPose(p09RowTwoScore, shot09RowTwo);
                     follow(rowTwoScore, "09 GATE 2 -> ROW 2 SCORE", p09RowTwoScore, true);
                     setPathState(11);
