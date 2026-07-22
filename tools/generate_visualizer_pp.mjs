@@ -12,7 +12,7 @@ const configFile = path.join(
 );
 const visualizerRoot = path.join(projectRoot, "visualizer");
 
-// The longest current route has 17 segments. Colors must not repeat within one .pp file.
+// RedAutoOcho currently defines 20 segments. Colors must not repeat within one .pp file.
 const colors = [
   "#facc15",
   "#22c55e",
@@ -52,6 +52,18 @@ function parseNumericConstants(source, visibility) {
   return values;
 }
 
+function numericExpression(expression, context) {
+  const normalized = expression.trim().replaceAll("_", "");
+  if (!/^[0-9+\-*/().\s]+$/.test(normalized)) {
+    throw new Error(`Unsupported numeric expression ${expression} in ${context}`);
+  }
+  const result = Function(`"use strict"; return (${normalized});`)();
+  if (!Number.isFinite(result)) {
+    throw new Error(`Non-finite numeric expression ${expression} in ${context}`);
+  }
+  return result;
+}
+
 const decodeConfigSource = fs.readFileSync(configFile, "utf8");
 const decodeValues = parseNumericConstants(decodeConfigSource, "public");
 
@@ -62,9 +74,19 @@ function parseJava(relativeFile) {
     /^\s*private final Pose\s+(\w+)\s*=\s*pose\(\s*([^,]+),\s*([^,]+),\s*([^)]+)\);/gm;
   for (const match of source.matchAll(posePattern)) {
     poses.set(match[1], {
-      x: Number(match[2].trim()),
-      y: Number(match[3].trim()),
-      heading: Number(match[4].trim()),
+      x: numericExpression(match[2], relativeFile),
+      y: numericExpression(match[3], relativeFile),
+      heading: numericExpression(match[4], relativeFile),
+    });
+  }
+
+  const newPosePattern =
+    /^\s*private final Pose\s+(\w+)\s*=\s*new Pose\(\s*([^,]+),\s*([^,]+),\s*Math\.toRadians\(\s*([^)]+)\s*\)\s*\);/gm;
+  for (const match of source.matchAll(newPosePattern)) {
+    poses.set(match[1], {
+      x: numericExpression(match[2], relativeFile),
+      y: numericExpression(match[3], relativeFile),
+      heading: numericExpression(match[4], relativeFile),
     });
   }
 
@@ -178,57 +200,66 @@ function routeCinco(java) {
   const segments = [
     segment("01 START -> PRELOAD SCORE", p(java, "p00Start"), p(java, "p01PreloadScore")),
     segment(
-      "02 SCORE -> PICKUP 1 READY",
+      "02 SCORE -> ROW 1 READY",
       p(java, "p01PreloadScore"),
-      p(java, "p02PickupOneReady"),
-      [p(java, "c02PickupOneReady")],
+      p(java, "p02RowOneReady"),
     ),
-    segment("03 COLLECT 1", p(java, "p02PickupOneReady"), p(java, "p03PickupOne")),
+    segment(
+      "03 COLLECT ROW 1",
+      p(java, "p02RowOneReady"),
+      p(java, "p03RowOnePickup"),
+    ),
     segment(
       "04 PUSH GATE 1",
-      p(java, "p03PickupOne"),
+      p(java, "p03RowOnePickup"),
       p(java, "p04GateOne"),
       [p(java, "c04GateOne")],
     ),
     segment(
-      "05 GATE 1 -> SCORE 1",
+      "05 GATE 1 -> ROW 1 SCORE",
       p(java, "p04GateOne"),
-      p(java, "p05ScoreOne"),
-      [p(java, "c05ScoreOne")],
+      p(java, "p05RowOneScore"),
     ),
     segment(
-      "06 SCORE 1 -> PICKUP 2 READY",
-      p(java, "p05ScoreOne"),
-      p(java, "p06PickupTwoReady"),
-      [p(java, "c06PickupTwoReady")],
+      "06 SCORE -> ROW 2 READY",
+      p(java, "p05RowOneScore"),
+      p(java, "p06RowTwoReady"),
+      [p(java, "c06RowTwoReady")],
     ),
-    segment("07 COLLECT 2", p(java, "p06PickupTwoReady"), p(java, "p07PickupTwo")),
+    segment(
+      "07 COLLECT ROW 2",
+      p(java, "p06RowTwoReady"),
+      p(java, "p07RowTwoPickup"),
+    ),
     segment(
       "08 PUSH GATE 2",
-      p(java, "p07PickupTwo"),
+      p(java, "p07RowTwoPickup"),
       p(java, "p08GateTwo"),
       [p(java, "c08GateTwo")],
     ),
     segment(
-      "09 GATE 2 -> SCORE 2",
+      "09 GATE 2 -> ROW 2 SCORE",
       p(java, "p08GateTwo"),
-      p(java, "p09ScoreTwo"),
-      [p(java, "c09ScoreTwo")],
+      p(java, "p09RowTwoScore"),
+      [p(java, "c09RowTwoScore")],
     ),
     segment(
-      "10 SCORE 2 -> PICKUP 3 READY",
-      p(java, "p09ScoreTwo"),
-      p(java, "p10PickupThreeReady"),
-      [p(java, "c10PickupThreeReady")],
+      "10 SCORE -> ROW 3 READY",
+      p(java, "p09RowTwoScore"),
+      p(java, "p10RowThreeReady"),
+      [p(java, "c10RowThreeReady")],
     ),
-    segment("11 COLLECT 3", p(java, "p10PickupThreeReady"), p(java, "p11PickupThree")),
     segment(
-      "12 PICKUP 3 -> SCORE 3",
-      p(java, "p11PickupThree"),
-      p(java, "p12ScoreThree"),
-      [p(java, "c12ScoreThree")],
+      "11 COLLECT ROW 3",
+      p(java, "p10RowThreeReady"),
+      p(java, "p11RowThreePickup"),
     ),
-    segment("13 SCORE 3 -> PARK", p(java, "p12ScoreThree"), p(java, "p13Park")),
+    segment(
+      "12 ROW 3 -> FINAL SCORE",
+      p(java, "p11RowThreePickup"),
+      p(java, "p12FinalScore"),
+    ),
+    segment("13 FINAL SCORE -> PARK", p(java, "p12FinalScore"), p(java, "p13Park")),
   ];
 
   const fireMs = value(java, "AUTO_NEAR_FIRE_DURATION_MS");
@@ -494,6 +525,158 @@ function routeSieteRed(java) {
   return { start: p(java, "startPose"), segments, sequence };
 }
 
+function routeOchoRed(java) {
+  const segments = [
+    segment("01 PRELOAD -> SCORE", p(java, "startPose"), p(java, "preloadScorePose")),
+    segment(
+      "02 SCORE -> PICKUP A1",
+      p(java, "preloadScorePose"),
+      p(java, "pickupA1Pose"),
+      [p(java, "control2ScoreToA1")],
+    ),
+    segment(
+      "03 PICKUP A1 -> SCORE 1",
+      p(java, "pickupA1Pose"),
+      p(java, "scoreAfterA1Pose"),
+      [p(java, "controlA1ToScore")],
+    ),
+    segment(
+      "04 SCORE 1 -> FINAL ROW READY",
+      p(java, "scoreAfterA1Pose"),
+      p(java, "p07RowThreeReady"),
+    ),
+    segment(
+      "05 COLLECT FINAL ROW",
+      p(java, "p07RowThreeReady"),
+      p(java, "p08RowThreePickup"),
+    ),
+    segment(
+      "06 FINAL ROW -> SCORE",
+      p(java, "p08RowThreePickup"),
+      p(java, "scoreAfterA1Pose"),
+    ),
+    segment(
+      "07 SCORE -> PREPICKUP B1",
+      p(java, "scoreAfterA1Pose"),
+      p(java, "prePickupB1Pose"),
+    ),
+    segment(
+      "08 PREPICKUP B1 -> PICKUP B1",
+      p(java, "prePickupB1Pose"),
+      p(java, "pickupB1Pose"),
+      [p(java, "controlPrePickupB1ToPickupB1")],
+    ),
+    segment(
+      "09 PICKUP B1 -> SCORE 2",
+      p(java, "pickupB1Pose"),
+      p(java, "scoreAfterB1Pose"),
+      [p(java, "controlB1ToScore")],
+    ),
+    segment(
+      "10 SCORE 2 -> PICKUP A2",
+      p(java, "scoreAfterB1Pose"),
+      p(java, "pickupA2Pose"),
+    ),
+    segment(
+      "11 PICKUP A2 -> SCORE 3",
+      p(java, "pickupA2Pose"),
+      p(java, "scoreAfterA2Pose"),
+      [p(java, "controlA2ToScore")],
+    ),
+    segment(
+      "12 SCORE 3 -> PREPICKUP B2",
+      p(java, "scoreAfterA2Pose"),
+      p(java, "prePickupB2Pose"),
+    ),
+    segment(
+      "13 PREPICKUP B2 -> PICKUP B2",
+      p(java, "prePickupB2Pose"),
+      p(java, "pickupB2Pose"),
+      [p(java, "controlPrePickupB2ToPickupB2")],
+    ),
+    segment(
+      "14 PICKUP B2 -> SCORE 4",
+      p(java, "pickupB2Pose"),
+      p(java, "scoreAfterB2Pose"),
+      [p(java, "controlB2ToScore")],
+    ),
+    segment(
+      "15 SCORE 4 -> PICKUP A3",
+      p(java, "scoreAfterB2Pose"),
+      p(java, "pickupA3Pose"),
+    ),
+    segment(
+      "16 PICKUP A3 -> SCORE 5",
+      p(java, "pickupA3Pose"),
+      p(java, "scoreAfterA3Pose"),
+      [p(java, "controlA3ToScore")],
+    ),
+    segment(
+      "17 SCORE 5 -> PREPICKUP B3",
+      p(java, "scoreAfterA3Pose"),
+      p(java, "prePickupB3Pose"),
+    ),
+    segment(
+      "18 PREPICKUP B3 -> PICKUP B3",
+      p(java, "prePickupB3Pose"),
+      p(java, "pickupB3Pose"),
+      [p(java, "controlPrePickupB3ToPickupB3")],
+    ),
+    segment(
+      "19 PICKUP B3 -> SCORE 6",
+      p(java, "pickupB3Pose"),
+      p(java, "scoreAfterB3Pose"),
+      [p(java, "controlB3ToScore")],
+    ),
+    segment(
+      "20 SCORE 6 -> PARK",
+      p(java, "scoreAfterB3Pose"),
+      p(java, "parkPose"),
+      [p(java, "controlScoreToPark")],
+    ),
+  ];
+
+  const fireMs = value(java, "REAR_SHOOT_MS");
+  const sequence = [
+    { kind: "path", index: 0 },
+    wait("01 PRELOAD SETTLE", value(java, "PRELOAD_CHASSIS_SETTLE_MS")),
+    wait("01 FIRE PRELOAD", fireMs),
+    { kind: "path", index: 1 },
+    wait("02 PICKUP A1 DWELL", value(java, "A1_PICKUP_DWELL_MS")),
+    { kind: "path", index: 2 },
+    wait("03 A1 SCORE SETTLE", value(java, "A1_CHASSIS_SETTLE_MS")),
+    wait("03 FIRE SCORE 1", fireMs),
+    { kind: "path", index: 3 },
+    { kind: "path", index: 4 },
+    wait("05 FINAL ROW PICKUP DWELL", value(java, "FINAL_ROW_PICKUP_DWELL_MS")),
+    { kind: "path", index: 5 },
+    wait("06 FINAL ROW SCORE SETTLE", value(java, "FINAL_ROW_CHASSIS_SETTLE_MS")),
+    wait("06 FIRE FINAL ROW", fireMs),
+    { kind: "path", index: 6 },
+    { kind: "path", index: 7 },
+    wait("08 PICKUP B1 DWELL", value(java, "B1_PICKUP_DWELL_MS")),
+    { kind: "path", index: 8 },
+    wait("09 B1 SCORE SETTLE", value(java, "B1_CHASSIS_SETTLE_MS")),
+    wait("09 FIRE SCORE 2", fireMs),
+    // Java state 13 jumps to 19, so A2 paths 10/11 are not executed.
+    { kind: "path", index: 11 },
+    { kind: "path", index: 12 },
+    wait("13 PICKUP B2 DWELL", value(java, "B2_PICKUP_DWELL_MS")),
+    { kind: "path", index: 13 },
+    wait("14 B2 SCORE SETTLE", value(java, "B2_CHASSIS_SETTLE_MS")),
+    wait("14 FIRE SCORE 4", fireMs),
+    // Java state 24 jumps to 30, so A3 paths 15/16 are not executed.
+    { kind: "path", index: 16 },
+    { kind: "path", index: 17 },
+    wait("18 PICKUP B3 DWELL", value(java, "B3_PICKUP_DWELL_MS")),
+    { kind: "path", index: 18 },
+    wait("19 B3 SCORE SETTLE", value(java, "B3_CHASSIS_SETTLE_MS")),
+    wait("19 FIRE SCORE 6", fireMs),
+    { kind: "path", index: 19 },
+  ];
+  return { start: p(java, "startPose"), segments, sequence };
+}
+
 function slug(text) {
   return text
     .toLowerCase()
@@ -628,15 +811,39 @@ function extractSequenceSegments(java) {
   return segments;
 }
 
+function extractMethodBody(java, methodName) {
+  const signature = new RegExp(`\\bvoid\\s+${methodName}\\s*\\(\\s*\\)\\s*\\{`);
+  const match = signature.exec(java.source);
+  if (!match) return null;
+
+  const bodyStart = match.index + match[0].length;
+  let depth = 1;
+  let quoted = false;
+  let cursor = bodyStart;
+  for (; cursor < java.source.length && depth > 0; cursor++) {
+    const character = java.source[cursor];
+    if (character === '"' && java.source[cursor - 1] !== "\\\\") {
+      quoted = !quoted;
+    } else if (!quoted && character === "{") {
+      depth++;
+    } else if (!quoted && character === "}") {
+      depth--;
+    }
+  }
+  if (depth !== 0) {
+    throw new Error(`Unclosed ${methodName}() in ${java.relativeFile}`);
+  }
+  return java.source.slice(bodyStart, cursor - 1);
+}
+
 function extractPathStateSegments(java) {
-  const pathsStart = java.source.indexOf("private void buildPaths()");
-  const pathsEnd = java.source.indexOf("private void autonomousPathUpdate()", pathsStart);
-  if (pathsStart < 0 || pathsEnd < 0) {
+  const pathsBody = extractMethodBody(java, "buildPaths");
+  const actionBody = extractMethodBody(java, "autonomousPathUpdate");
+  if (pathsBody === null || actionBody === null) {
     throw new Error(
       `Missing buildSequence() or buildPaths()/autonomousPathUpdate() in ${java.relativeFile}`,
     );
   }
-  const pathsBody = java.source.slice(pathsStart, pathsEnd);
   const paths = new Map();
   const assignmentPattern = /(\w+)\s*=\s*(\w+)\s*\(/g;
   for (const match of pathsBody.matchAll(assignmentPattern)) {
@@ -651,9 +858,6 @@ function extractPathStateSegments(java) {
     );
   }
 
-  const actionStart = pathsEnd;
-  const actionEnd = java.source.indexOf("@Override", actionStart);
-  const actionBody = java.source.slice(actionStart, actionEnd);
   const segments = [];
   let searchAt = 0;
   while (true) {
@@ -708,7 +912,10 @@ function assertRouteMatchesJava(java, route) {
 }
 
 function buildPp(definition) {
-  const previous = JSON.parse(fs.readFileSync(definition.output, "utf8"));
+  const settingsSource = fs.existsSync(definition.output)
+    ? definition.output
+    : path.join(visualizerRoot, definition.template);
+  const previous = JSON.parse(fs.readFileSync(settingsSource, "utf8"));
   const prefix = `${definition.alliance.toLowerCase()}-${definition.kind.toLowerCase()}`;
   if (definition.route.segments.length > colors.length) {
     throw new Error(`Not enough unique colors for ${definition.output}`);
@@ -843,9 +1050,28 @@ const definitions = [
     output: "BLUE-AutoSiete-Far-SixCycle-RearShooter.pp",
     route: routeSieteBlue,
   },
+  {
+    alliance: "RED",
+    kind: "Ocho",
+    java: "Red/RedAutoOcho.java",
+    output: "RED-AutoOcho-Far-FinalRow-RearShooter.pp",
+    template: "RED-AutoSiete-Far-SixCycle-RearShooter.pp",
+    route: routeOchoRed,
+  },
 ];
 
-for (const definition of definitions) {
+const requestedClasses = new Set(process.argv.slice(2));
+const selectedDefinitions = requestedClasses.size === 0
+  ? definitions
+  : definitions.filter((definition) =>
+      requestedClasses.has(path.basename(definition.java, ".java")),
+    );
+if (selectedDefinitions.length !== requestedClasses.size) {
+  const known = definitions.map((definition) => path.basename(definition.java, ".java"));
+  throw new Error(`Unknown autonomous class. Available: ${known.join(", ")}`);
+}
+
+for (const definition of selectedDefinitions) {
   const java = parseJava(definition.java);
   const output = path.join(visualizerRoot, definition.output);
   const route =

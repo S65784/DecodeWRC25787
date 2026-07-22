@@ -67,7 +67,7 @@ public final class DecodeConfig {
     public static final double DRIVER_TURN_CANCEL_DEADBAND = 0.10;
 
     public static final double SLOW_DRIVE_SCALE = 0.40;
-    public static final double FAR_SHOT_DISTANCE_INCHES = 80;
+    public static final double FAR_SHOT_DISTANCE_INCHES = 90;
     public static final double FAR_OFFSET_STEP_RAD = Math.toRadians(0.25);
     public static final double FAR_OFFSET_LIMIT_RAD = Math.toRadians(10);
 

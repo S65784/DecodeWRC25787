@@ -8,7 +8,7 @@
   },
   "lines": [
     {
-      "id": "red-01",
+      "id": "red-cinco-01-01-start-preload-score",
       "name": "RED 01 START -> PRELOAD SCORE",
       "endPoint": {
         "x": 91.8,
@@ -27,10 +27,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-02",
+      "id": "red-cinco-02-02-score-row-1-ready",
       "name": "RED 02 SCORE -> ROW 1 READY",
       "endPoint": {
-        "x": 99,
+        "x": 90,
         "y": 83,
         "heading": "linear",
         "startDeg": 233.841815,
@@ -46,7 +46,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-03",
+      "id": "red-cinco-03-03-collect-row-1",
       "name": "RED 03 COLLECT ROW 1",
       "endPoint": {
         "x": 125,
@@ -65,20 +65,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-04",
+      "id": "red-cinco-04-04-push-gate-1",
       "name": "RED 04 PUSH GATE 1",
       "endPoint": {
-        "x": 128.16371,
-        "y": 71.543548,
+        "x": 132.5,
+        "y": 72,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": -90,
+        "endDeg": 0,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 115.202432,
-          "y": 79.232036,
+          "x": 104.93227091633466,
+          "y": 69.4183266932271,
           "locked": false
         }
       ],
@@ -90,13 +90,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-05",
+      "id": "red-cinco-05-05-gate-1-row-1-score",
       "name": "RED 05 GATE 1 -> ROW 1 SCORE",
       "endPoint": {
         "x": 84,
         "y": 83,
         "heading": "linear",
-        "startDeg": -90,
+        "startDeg": 0,
         "endDeg": 227.726311,
         "locked": false
       },
@@ -109,10 +109,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-06",
+      "id": "red-cinco-06-06-score-row-2-ready",
       "name": "RED 06 SCORE -> ROW 2 READY",
       "endPoint": {
-        "x": 85.812903,
+        "x": 85.81290322580645,
         "y": 59,
         "heading": "linear",
         "startDeg": 227.726311,
@@ -121,8 +121,8 @@
       },
       "controlPoints": [
         {
-          "x": 87.68229,
-          "y": 72.268161,
+          "x": 87.68229032258066,
+          "y": 72.26816129032255,
           "locked": false
         }
       ],
@@ -134,7 +134,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-07",
+      "id": "red-cinco-07-07-collect-row-2",
       "name": "RED 07 COLLECT ROW 2",
       "endPoint": {
         "x": 131,
@@ -145,7 +145,7 @@
         "locked": false
       },
       "controlPoints": [],
-      "color": "#ec4899",
+      "color": "#ef4444",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -153,11 +153,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-08",
+      "id": "red-cinco-08-08-push-gate-2",
       "name": "RED 08 PUSH GATE 2",
       "endPoint": {
-        "x": 127.779032,
-        "y": 73.825806,
+        "x": 132.8,
+        "y": 72,
         "heading": "linear",
         "startDeg": 0,
         "endDeg": 0,
@@ -165,8 +165,8 @@
       },
       "controlPoints": [
         {
-          "x": 126.665323,
-          "y": 66.641935,
+          "x": 106,
+          "y": 52.91444600280506,
           "locked": false
         }
       ],
@@ -178,7 +178,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-09",
+      "id": "red-cinco-09-09-gate-2-row-2-score",
       "name": "RED 09 GATE 2 -> ROW 2 SCORE",
       "endPoint": {
         "x": 84,
@@ -203,10 +203,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-10",
+      "id": "red-cinco-10-10-score-row-3-ready",
       "name": "RED 10 SCORE -> ROW 3 READY",
       "endPoint": {
-        "x": 83.501613,
+        "x": 83.50161290322582,
         "y": 36,
         "heading": "linear",
         "startDeg": 227.726311,
@@ -215,30 +215,11 @@
       },
       "controlPoints": [
         {
-          "x": 86.837903,
-          "y": 42.416129,
+          "x": 86.83790322580646,
+          "y": 42.416129032258056,
           "locked": false
         }
       ],
-      "color": "#ef4444",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "red-11",
-      "name": "RED 11 COLLECT ROW 3",
-      "endPoint": {
-        "x": 132,
-        "y": 36,
-        "heading": "linear",
-        "startDeg": 0,
-        "endDeg": 0,
-        "locked": false
-      },
-      "controlPoints": [],
       "color": "#8b5cf6",
       "locked": false,
       "waitBeforeMs": 0,
@@ -247,14 +228,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-12",
-      "name": "RED 12 ROW 3 -> FINAL SCORE",
+      "id": "red-cinco-11-11-collect-row-3",
+      "name": "RED 11 COLLECT ROW 3",
       "endPoint": {
-        "x": 84.077,
-        "y": 107.923,
+        "x": 132,
+        "y": 36,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": 211.06761,
+        "endDeg": 0,
         "locked": false
       },
       "controlPoints": [],
@@ -266,7 +247,26 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-13",
+      "id": "red-cinco-12-12-row-3-final-score",
+      "name": "RED 12 ROW 3 -> FINAL SCORE",
+      "endPoint": {
+        "x": 84.077,
+        "y": 107.923,
+        "heading": "linear",
+        "startDeg": 0,
+        "endDeg": 211.06761,
+        "locked": false
+      },
+      "controlPoints": [],
+      "color": "#eab308",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "red-cinco-13-13-final-score-park",
       "name": "RED 13 FINAL SCORE -> PARK",
       "endPoint": {
         "x": 86,
@@ -277,7 +277,7 @@
         "locked": false
       },
       "controlPoints": [],
-      "color": "#0ea5e9",
+      "color": "#6366f1",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -371,188 +371,188 @@
   "sequence": [
     {
       "kind": "path",
-      "lineId": "red-01"
+      "lineId": "red-cinco-01-01-start-preload-score"
     },
     {
       "kind": "wait",
-      "id": "red-01-shoot",
-      "name": "RED rear shoot",
+      "id": "red-cinco-wait-01-01-fire",
+      "name": "RED 01 FIRE",
       "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-02"
+      "lineId": "red-cinco-02-02-score-row-1-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-03"
+      "lineId": "red-cinco-03-03-collect-row-1"
     },
     {
       "kind": "path",
-      "lineId": "red-04"
+      "lineId": "red-cinco-04-04-push-gate-1"
     },
     {
       "kind": "path",
-      "lineId": "red-05"
+      "lineId": "red-cinco-05-05-gate-1-row-1-score"
     },
     {
       "kind": "wait",
-      "id": "red-05-shoot",
-      "name": "RED rear shoot",
+      "id": "red-cinco-wait-02-05-fire",
+      "name": "RED 05 FIRE",
       "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-06"
+      "lineId": "red-cinco-06-06-score-row-2-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-07"
+      "lineId": "red-cinco-07-07-collect-row-2"
     },
     {
       "kind": "path",
-      "lineId": "red-08"
+      "lineId": "red-cinco-08-08-push-gate-2"
     },
     {
       "kind": "path",
-      "lineId": "red-09"
+      "lineId": "red-cinco-09-09-gate-2-row-2-score"
     },
     {
       "kind": "wait",
-      "id": "red-09-shoot",
-      "name": "RED rear shoot",
+      "id": "red-cinco-wait-03-09-fire",
+      "name": "RED 09 FIRE",
       "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-10"
+      "lineId": "red-cinco-10-10-score-row-3-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-11"
+      "lineId": "red-cinco-11-11-collect-row-3"
     },
     {
       "kind": "path",
-      "lineId": "red-12"
+      "lineId": "red-cinco-12-12-row-3-final-score"
     },
     {
       "kind": "wait",
-      "id": "red-12-shoot",
-      "name": "RED rear shoot",
+      "id": "red-cinco-wait-04-12-fire",
+      "name": "RED 12 FIRE",
       "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-13"
+      "lineId": "red-cinco-13-13-final-score-park"
     }
   ],
   "pathChains": [
     {
-      "id": "red-01-chain",
+      "id": "red-cinco-01-01-start-preload-score-chain",
       "name": "RED 01 START -> PRELOAD SCORE",
       "color": "#facc15",
       "lineIds": [
-        "red-01"
+        "red-cinco-01-01-start-preload-score"
       ]
     },
     {
-      "id": "red-02-chain",
+      "id": "red-cinco-02-02-score-row-1-ready-chain",
       "name": "RED 02 SCORE -> ROW 1 READY",
       "color": "#22c55e",
       "lineIds": [
-        "red-02"
+        "red-cinco-02-02-score-row-1-ready"
       ]
     },
     {
-      "id": "red-03-chain",
+      "id": "red-cinco-03-03-collect-row-1-chain",
       "name": "RED 03 COLLECT ROW 1",
       "color": "#3b82f6",
       "lineIds": [
-        "red-03"
+        "red-cinco-03-03-collect-row-1"
       ]
     },
     {
-      "id": "red-04-chain",
+      "id": "red-cinco-04-04-push-gate-1-chain",
       "name": "RED 04 PUSH GATE 1",
       "color": "#f97316",
       "lineIds": [
-        "red-04"
+        "red-cinco-04-04-push-gate-1"
       ]
     },
     {
-      "id": "red-05-chain",
+      "id": "red-cinco-05-05-gate-1-row-1-score-chain",
       "name": "RED 05 GATE 1 -> ROW 1 SCORE",
       "color": "#a855f7",
       "lineIds": [
-        "red-05"
+        "red-cinco-05-05-gate-1-row-1-score"
       ]
     },
     {
-      "id": "red-06-chain",
+      "id": "red-cinco-06-06-score-row-2-ready-chain",
       "name": "RED 06 SCORE -> ROW 2 READY",
       "color": "#14b8a6",
       "lineIds": [
-        "red-06"
+        "red-cinco-06-06-score-row-2-ready"
       ]
     },
     {
-      "id": "red-07-chain",
+      "id": "red-cinco-07-07-collect-row-2-chain",
       "name": "RED 07 COLLECT ROW 2",
-      "color": "#ec4899",
+      "color": "#ef4444",
       "lineIds": [
-        "red-07"
+        "red-cinco-07-07-collect-row-2"
       ]
     },
     {
-      "id": "red-08-chain",
+      "id": "red-cinco-08-08-push-gate-2-chain",
       "name": "RED 08 PUSH GATE 2",
       "color": "#84cc16",
       "lineIds": [
-        "red-08"
+        "red-cinco-08-08-push-gate-2"
       ]
     },
     {
-      "id": "red-09-chain",
+      "id": "red-cinco-09-09-gate-2-row-2-score-chain",
       "name": "RED 09 GATE 2 -> ROW 2 SCORE",
       "color": "#06b6d4",
       "lineIds": [
-        "red-09"
+        "red-cinco-09-09-gate-2-row-2-score"
       ]
     },
     {
-      "id": "red-10-chain",
+      "id": "red-cinco-10-10-score-row-3-ready-chain",
       "name": "RED 10 SCORE -> ROW 3 READY",
-      "color": "#ef4444",
-      "lineIds": [
-        "red-10"
-      ]
-    },
-    {
-      "id": "red-11-chain",
-      "name": "RED 11 COLLECT ROW 3",
       "color": "#8b5cf6",
       "lineIds": [
-        "red-11"
+        "red-cinco-10-10-score-row-3-ready"
       ]
     },
     {
-      "id": "red-12-chain",
-      "name": "RED 12 ROW 3 -> FINAL SCORE",
+      "id": "red-cinco-11-11-collect-row-3-chain",
+      "name": "RED 11 COLLECT ROW 3",
       "color": "#10b981",
       "lineIds": [
-        "red-12"
+        "red-cinco-11-11-collect-row-3"
       ]
     },
     {
-      "id": "red-13-chain",
-      "name": "RED 13 FINAL SCORE -> PARK",
-      "color": "#0ea5e9",
+      "id": "red-cinco-12-12-row-3-final-score-chain",
+      "name": "RED 12 ROW 3 -> FINAL SCORE",
+      "color": "#eab308",
       "lineIds": [
-        "red-13"
+        "red-cinco-12-12-row-3-final-score"
+      ]
+    },
+    {
+      "id": "red-cinco-13-13-final-score-park-chain",
+      "name": "RED 13 FINAL SCORE -> PARK",
+      "color": "#6366f1",
+      "lineIds": [
+        "red-cinco-13-13-final-score-park"
       ]
     }
   ]

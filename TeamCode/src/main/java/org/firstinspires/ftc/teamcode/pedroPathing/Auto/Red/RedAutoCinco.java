@@ -28,8 +28,8 @@ public final class RedAutoCinco extends PathStateAutoBase {
     private final Pose p03RowOnePickup = pose(125.000, 83.000, 0);
 
     // Gate 1 coordinates remain unchanged.
-    private final Pose c04GateOne = pose(115.20243220665724, 79.23203637064647, 0);
-    private final Pose p04GateOne = pose(128.16370967741938, 71.54354838709679, -90);
+    private final Pose c04GateOne = pose(104.93227091633466, 69.4183266932271,270);//114.93227091633466
+    private final Pose p04GateOne  = pose(126, 72, 0);
 
     private final Pose p05RowOneScore = pose(84.000, 83.000, 227.726311);
     private final ShotParameters shot05RowOne = shot(1408, 0.2782);
@@ -40,8 +40,8 @@ public final class RedAutoCinco extends PathStateAutoBase {
     private final Pose p07RowTwoPickup = pose(131.000, 59.000, 0);
 
     // Gate 2 coordinates remain unchanged.
-    private final Pose c08GateTwo = pose(120.95967783870968, 62.99032209677419, 270);
-    private final Pose p08GateTwo = pose(127.09435458064517, 75.19516083870967, -90);
+    private final Pose c08GateTwo = pose(140-34, 52.91444600280506, 270);//140-20
+    private final Pose p08GateTwo = pose(125.5, 72, 0);
 
     private final Pose c09RowTwoScore = pose(99.000, 60.000, 0);
     private final Pose p09RowTwoScore = pose(84.000, 83.000, 227.726311);
@@ -49,7 +49,7 @@ public final class RedAutoCinco extends PathStateAutoBase {
 
     // Row 3: no gate push.
     private final Pose c10RowThreeReady = pose(86.83790322580646, 42.416129032258056, 0);
-    private final Pose p10RowThreeReady = pose(83.50161290322582, 36.000, 0);
+    private final Pose p10RowThreeReady = pose(85, 36.000, 0);
     private final Pose p11RowThreePickup = pose(132.000, 36.000, 0);
     private final Pose p12FinalScore = pose(84.077, 107.923, 211.067610);
     private final ShotParameters shot12Final = shot(1348, 0.2300);

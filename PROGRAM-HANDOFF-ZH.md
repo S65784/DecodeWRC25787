@@ -271,7 +271,8 @@ node tools/mirror-red-auto-to-blue.mjs \
 运行脚本会覆盖蓝方文件。若蓝方存在故意的单独微调，必须先提交或备份，并决定是否还应
 使用“蓝方严格镜像红方”的维护方式。
 
-当前 `.pp` 工具覆盖 Cero、Cinco、Dos、Siete；Ocho 还没有独立的 `.pp` 生成支持。
+当前 `.pp` 工具覆盖 Cero、Cinco、Dos、Siete、RedAutoOcho。可按程序名只生成指定文件，
+例如 `node tools/generate_visualizer_pp.mjs RedAutoOcho`。
 Java 文件永远是路径的主基准，不能让旧 `.pp` 反向覆盖 Java 坐标。
 
 ## 10. 定位与自动到手动交接
@@ -349,7 +350,6 @@ Panels 中的 `TEST_FIRE_DURATION_MS` 只对本次调试生效，不会写入配
 - 不要用旧备份、旧 Notes 附件或旧 `.pp` 覆盖当前 Java。
 - 不要在 OpMode 循环中加入 `Thread.sleep()`；现有机构和自动都是非阻塞状态机。
 - AutoDos 当前禁用。
-- Ocho 当前没有对应 `.pp` 自动生成工具。
 - `Alliance.java` 仍有 TODO 注释；球门点和重置点需要按正式场地复核。
 - `Constants.java` 仍有 Pinpoint pod 偏移 TODO；机械位置改变后必须重测。
 - 共享飞轮控制只能闭环 ShooterR。虽然同轴能机械同步，但软件无法检测 ShooterL 独立故障。

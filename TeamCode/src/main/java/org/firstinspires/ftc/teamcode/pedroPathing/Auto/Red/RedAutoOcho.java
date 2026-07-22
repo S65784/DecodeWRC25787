@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.pedroPathing.Auto.PathStateAutoBase;
 public final class RedAutoOcho extends PathStateAutoBase {
 
     //skipa2a3
-    private static final ShotParameters SHOT = shot(1860, 0.52);
+    private static final ShotParameters SHOT = shot(1840, 0.52);
     private static final long REAR_SHOOT_MS = DecodeConfig.AUTO_FIRE_DURATION_MS;
 
     private final Pose startPose = pose(79.725, 9.431, -90);
@@ -24,7 +24,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private final Pose pickupA1Pose = pose(132.174, 8.174, 0);
     private final Pose controlScoreToA1 = pose(114.56935483870969, 32.40806451612903, 0);
     private final Pose control2ScoreToA1 = pose(125.861, 39.135, 0);
-    private final Pose scoreAfterA1Pose = pose(89.000, 12.000, -107.5);
+    private final Pose scoreAfterA1Pose = pose(89.000, 12.000, -108.2);//-107.5
     private final Pose controlA1ToScore = pose(120.857, 17.619, 0);
     private static final long A1_PICKUP_DWELL_MS = 300;
     private static final long A1_CHASSIS_SETTLE_MS = 300;
@@ -39,7 +39,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private final Pose pickupB1Pose = pose(130.17390322580644, 48.531806451612916, 50);
     private final Pose controlPrePickupB1ToPickupB1 =
             pose(134.42516129032254, 11.639774193548401, 40);
-    private final Pose scoreAfterB1Pose = pose(89.000, 12.500, -108);
+    private final Pose scoreAfterB1Pose = pose(89.000, 12.500, -108);//108
     private final Pose controlB1ToScore = pose(113.695, 25.131, 0);
     private static final long B1_PICKUP_DWELL_MS = 250;
     private static final long B1_CHASSIS_SETTLE_MS = 300;
@@ -47,7 +47,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private final Pose pickupA2Pose = pose(132.83041674893587, 11, 0);
 //    private final Pose controlScoreToA2 = pose(123.01117611640345, 26.94817134808066, 0);
 //    private final Pose control2ScoreToA2 = pose(140.61762772930666, 28.464703606145186, 0);
-    private final Pose scoreAfterA2Pose = pose(89.000, 12.000, -109);
+    private final Pose scoreAfterA2Pose = pose(89.000, 12.000, -108);
     private final Pose controlA2ToScore = pose(120.857, 17.619, 0);
     private static final long A2_PICKUP_DWELL_MS = 200;
     private static final long A2_CHASSIS_SETTLE_MS = 300;
@@ -61,7 +61,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private static final long B2_PICKUP_DWELL_MS = 200;
     private static final long B2_CHASSIS_SETTLE_MS = 300;
 
-    private final Pose pickupA3Pose = pose(132.83041674893587, 11, 270);
+    private final Pose pickupA3Pose = pose(130, 11, 0);
     private final Pose controlScoreToA3 = pose(123.01117611640345, 26.94817134808066, 0);
     private final Pose control2ScoreToA3 = pose(140.38940192285503, 28.464703606145186, 0);
     private final Pose scoreAfterA3Pose = pose(89.000, 12.000, -109);
@@ -70,7 +70,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private static final long A3_CHASSIS_SETTLE_MS = 300;
 
     private final Pose prePickupB3Pose = pose(109.548, 13.465, 40);
-    private final Pose pickupB3Pose = pose(129.261, 46.706, 40);
+    private final Pose pickupB3Pose = pose(129.261, 46.706, 50);
     private final Pose controlPrePickupB3ToPickupB3 =
             pose(134.42516129032254, 11.639774193548401, 40);
     private final Pose scoreAfterB3Pose = pose(89.000, 12.500, -109);
@@ -341,12 +341,12 @@ public final class RedAutoOcho extends PathStateAutoBase {
             case 24:
                 if (waitFinished(B2_CHASSIS_SETTLE_MS)) {
                     requestShot(SHOT, REAR_SHOOT_MS);
-                    setPathState(30);
+                    setPathState(25);
                 }
                 break;
 
 
-                //
+
             case 25:
                 if (shotFinishedOrTimedOut()) {
                     startIntake(1);
@@ -373,12 +373,12 @@ public final class RedAutoOcho extends PathStateAutoBase {
             case 29:
                 if (waitFinished(A3_CHASSIS_SETTLE_MS)) {
                     requestShot(SHOT, REAR_SHOOT_MS);
-                    setPathState(30);
+                    setPathState(36);
                 }
                 break;
-                //
 
 
+            //
             case 30:
                 if (shotFinishedOrTimedOut()) {
                     startIntake(1);
@@ -414,6 +414,9 @@ public final class RedAutoOcho extends PathStateAutoBase {
                     setPathState(36);
                 }
                 break;
+                //
+
+
             case 36:
                 if (shotFinishedOrTimedOut()) {
                     shooter.setEnabled(false);
