@@ -68,7 +68,7 @@
       "id": "red-cinco-04-04-push-gate-1",
       "name": "RED 04 PUSH GATE 1",
       "endPoint": {
-        "x": 132.5,
+        "x": 126.2,
         "y": 72,
         "heading": "linear",
         "startDeg": 0,
@@ -156,7 +156,7 @@
       "id": "red-cinco-08-08-push-gate-2",
       "name": "RED 08 PUSH GATE 2",
       "endPoint": {
-        "x": 132.8,
+        "x": 126.5,
         "y": 72,
         "heading": "linear",
         "startDeg": 0,
@@ -206,7 +206,7 @@
       "id": "red-cinco-10-10-score-row-3-ready",
       "name": "RED 10 SCORE -> ROW 3 READY",
       "endPoint": {
-        "x": 83.50161290322582,
+        "x": 87.5,
         "y": 36,
         "heading": "linear",
         "startDeg": 227.726311,

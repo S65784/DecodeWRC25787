@@ -125,71 +125,72 @@ function wait(name, durationMs) {
   return { kind: "wait", name, durationMs };
 }
 
-function routeCero(java, alliance) {
-  const red = alliance === "RED";
+// Blue is now a verbatim mirror of red, so both alliances share one route shape.
+// The old alliance-conditional controls are gone; keep this matching buildPaths().
+function routeCero(java) {
   const segments = [
     segment("01 START -> PRELOAD SCORE", p(java, "p00Start"), p(java, "p01PreloadScore")),
     segment(
-      "02 COLLECT ROW 2",
+      "02 SCORE -> ROW 2 READY",
       p(java, "p01PreloadScore"),
-      p(java, "p02RowTwoPickup"),
-      red
-        ? [p(java, "c02RowTwoPickup"), p(java, "cc02RowTwoPickup")]
-        : [p(java, "c02RowTwoPickup")],
+      p(java, "p12RowTwoReady"),
+      [p(java, "c12RowTwoReady")],
     ),
     segment(
-      "03 ROW 2 -> SCORE",
+      "03 COLLECT ROW 2",
+      p(java, "p12RowTwoReady"),
+      p(java, "p02RowTwoPickup"),
+    ),
+    segment(
+      "04 ROW 2 -> SCORE",
       p(java, "p02RowTwoPickup"),
       p(java, "p03RowTwoScore"),
       [p(java, "c03RowTwoScore")],
     ),
     segment(
-      "04 SCORE -> ROW 1 READY",
+      "05 SCORE -> ROW 1 READY",
       p(java, "p03RowTwoScore"),
       p(java, "p04RowOneReady"),
     ),
     segment(
-      "05 COLLECT ROW 1",
+      "06 COLLECT ROW 1",
       p(java, "p04RowOneReady"),
       p(java, "p05RowOnePickup"),
     ),
     segment(
-      "06 ROW 1 -> SCORE",
+      "07 ROW 1 -> SCORE",
       p(java, "p05RowOnePickup"),
       p(java, "p06RowOneScore"),
     ),
     segment(
-      "07 SCORE -> ROW 3 READY",
+      "08 SCORE -> ROW 3 READY",
       p(java, "p06RowOneScore"),
       p(java, "p07RowThreeReady"),
-      red ? [p(java, "c07RowThreeReady")] : [],
+      [p(java, "c07RowThreeReady")],
     ),
     segment(
-      "08 COLLECT ROW 3",
+      "09 COLLECT ROW 3",
       p(java, "p07RowThreeReady"),
       p(java, "p08RowThreePickup"),
     ),
     segment(
-      "09 ROW 3 -> FINAL SCORE",
+      "10 ROW 3 -> FINAL SCORE",
       p(java, "p08RowThreePickup"),
       p(java, "p09FinalScore"),
     ),
+    segment(
+      "11 FINAL SCORE -> PARK",
+      p(java, "p09FinalScore"),
+      p(java, "parkPose"),
+    ),
   ];
-  if (red) {
-    segments.push(
-      segment(
-        "10 FINAL SCORE -> PARK",
-        p(java, "p09FinalScore"),
-        p(java, "parkPose"),
-      ),
-    );
-  }
 
   const fireMs = value(java, "AUTO_NEAR_FIRE_DURATION_MS");
   const sequence = [];
   segments.forEach((_, index) => {
     sequence.push({ kind: "path", index });
-    if ([0, 2, 5, 8].includes(index)) {
+    // Shots follow the preload, row 2, row 1, and final scoring paths.
+    if ([0, 3, 6, 9].includes(index)) {
       sequence.push(wait(`${String(index + 1).padStart(2, "0")} FIRE`, fireMs));
     }
   });
@@ -326,65 +327,7 @@ function routeDos(java) {
   return { start: p(java, "p00Start"), segments, sequence };
 }
 
-function routeSieteBlue(java) {
-  const names = ["A1", "B1", "A2", "B2", "A3", "B3"];
-  const segments = [
-    segment("01 PRELOAD -> SCORE", p(java, "startPose"), p(java, "preloadScorePose")),
-  ];
-  let score = p(java, "preloadScorePose");
-  names.forEach((cycle, index) => {
-    const pickup = p(java, `pickup${cycle}Pose`);
-    const nextScore = p(java, `scoreAfter${cycle}Pose`);
-    const outboundName =
-      index === 0
-        ? "02 SCORE -> PICKUP A1"
-        : `${String(index * 2 + 2).padStart(2, "0")} SCORE ${index} -> PICKUP ${cycle}`;
-    segments.push(
-      segment(
-        outboundName,
-        score,
-        pickup,
-        [p(java, `controlScoreTo${cycle}`)],
-      ),
-      segment(
-        `${String(index * 2 + 3).padStart(2, "0")} PICKUP ${cycle} -> SCORE ${index + 1}`,
-        pickup,
-        nextScore,
-        [p(java, `control${cycle}ToScore`)],
-      ),
-    );
-    score = nextScore;
-  });
-  segments.push(
-    segment("14 SCORE 6 -> PARK", score, p(java, "parkPose"), [
-      p(java, "controlScoreToPark"),
-    ]),
-  );
-
-  const settleMs = value(java, "CHASSIS_SETTLE_MS");
-  const dwellMs = value(java, "PICKUP_DWELL_MS");
-  const fireMs = value(java, "AUTO_FIRE_DURATION_MS");
-  const sequence = [
-    { kind: "path", index: 0 },
-    wait("01 CHASSIS SETTLE", settleMs),
-    wait("01 FIRE PRELOAD", fireMs),
-  ];
-  for (let cycle = 0; cycle < 6; cycle++) {
-    const outbound = cycle * 2 + 1;
-    const inbound = outbound + 1;
-    sequence.push(
-      { kind: "path", index: outbound },
-      wait(`${String(outbound + 1).padStart(2, "0")} PICKUP DWELL`, dwellMs),
-      { kind: "path", index: inbound },
-      wait(`${String(inbound + 1).padStart(2, "0")} CHASSIS SETTLE`, settleMs),
-      wait(`${String(inbound + 1).padStart(2, "0")} FIRE`, fireMs),
-    );
-  }
-  sequence.push({ kind: "path", index: 13 });
-  return { start: p(java, "startPose"), segments, sequence };
-}
-
-function routeSieteRed(java) {
+function routeSiete(java) {
   const segments = [
     segment("01 PRELOAD -> SCORE", p(java, "startPose"), p(java, "preloadScorePose")),
     segment(
@@ -420,7 +363,8 @@ function routeSieteRed(java) {
       "07 SCORE 2 -> PICKUP A2",
       p(java, "scoreAfterB1Pose"),
       p(java, "pickupA2Pose"),
-      [p(java, "controlScoreToA2"), p(java, "control2ScoreToA2")],
+      // Java builds this as a single-control curve: curve(scoreAfterB1Pose, control2ScoreToA2, pickupA2Pose)
+      [p(java, "control2ScoreToA2")],
     ),
     segment(
       "08 PICKUP A2 -> SCORE 3",
@@ -449,7 +393,8 @@ function routeSieteRed(java) {
       "12 SCORE 4 -> PICKUP A3",
       p(java, "scoreAfterB2Pose"),
       p(java, "pickupA3Pose"),
-      [p(java, "controlScoreToA3"), p(java, "control2ScoreToA3")],
+      // Java builds this as a single-control curve: curve(scoreAfterB2Pose, control2ScoreToA3, pickupA3Pose)
+      [p(java, "control2ScoreToA3")],
     ),
     segment(
       "13 PICKUP A3 -> SCORE 5",
@@ -1041,14 +986,14 @@ const definitions = [
     kind: "Siete",
     java: "Red/RedAutoSiete.java",
     output: "RED-AutoSiete-Far-SixCycle-RearShooter.pp",
-    route: routeSieteRed,
+    route: routeSiete,
   },
   {
     alliance: "BLUE",
     kind: "Siete",
     java: "Blue/BlueAutoSiete.java",
     output: "BLUE-AutoSiete-Far-SixCycle-RearShooter.pp",
-    route: routeSieteBlue,
+    route: routeSiete,
   },
   {
     alliance: "RED",
@@ -1066,18 +1011,27 @@ const selectedDefinitions = requestedClasses.size === 0
   : definitions.filter((definition) =>
       requestedClasses.has(path.basename(definition.java, ".java")),
     );
-if (selectedDefinitions.length !== requestedClasses.size) {
+// Only validate the names that were actually asked for. Running with no arguments
+// regenerates every definition, so comparing against a request count of zero would
+// reject the generate-everything case.
+if (requestedClasses.size !== 0 && selectedDefinitions.length !== requestedClasses.size) {
   const known = definitions.map((definition) => path.basename(definition.java, ".java"));
   throw new Error(`Unknown autonomous class. Available: ${known.join(", ")}`);
 }
 
 for (const definition of selectedDefinitions) {
   const java = parseJava(definition.java);
+  // A disabled autonomous is commented out wholesale, so nothing parses. Skip it with a
+  // notice instead of failing the whole run and leaving the other files unwritten.
+  if (java.poses.size === 0) {
+    console.warn(
+      `Skipped ${definition.output}: no poses found in ${definition.java} ` +
+        "(the autonomous is commented out). Its existing .pp is left untouched.",
+    );
+    continue;
+  }
   const output = path.join(visualizerRoot, definition.output);
-  const route =
-    definition.route === routeCero
-      ? definition.route(java, definition.alliance)
-      : definition.route(java);
+  const route = definition.route(java);
   assertRouteMatchesJava(java, route);
   buildPp({ ...definition, output, route });
 }

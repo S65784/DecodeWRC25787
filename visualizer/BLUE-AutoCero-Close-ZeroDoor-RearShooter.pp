@@ -8,14 +8,14 @@
   },
   "lines": [
     {
-      "id": "blue-cero-01",
-      "name": "BLUE 01 START -> PRELOAD REAR SCORE",
+      "id": "blue-cero-01-01-start-preload-score",
+      "name": "BLUE 01 START -> PRELOAD SCORE",
       "endPoint": {
         "x": 52.2,
         "y": 89.8,
         "heading": "linear",
         "startDeg": 315.2839,
-        "endDeg": 306.158185,
+        "endDeg": -53.841815,
         "locked": false
       },
       "controlPoints": [],
@@ -27,20 +27,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-02",
+      "id": "blue-cero-02-02-score-row-2-ready",
       "name": "BLUE 02 SCORE -> ROW 2 READY",
       "endPoint": {
-        "x": 58.187097,
+        "x": 58.18709677419355,
         "y": 59,
         "heading": "linear",
-        "startDeg": 306.158185,
+        "startDeg": -53.841815,
         "endDeg": 180,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 56.31771,
-          "y": 72.268161,
+          "x": 56.31770967741934,
+          "y": 72.26816129032255,
           "locked": false
         }
       ],
@@ -52,7 +52,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-03",
+      "id": "blue-cero-03-03-collect-row-2",
       "name": "BLUE 03 COLLECT ROW 2",
       "endPoint": {
         "x": 13,
@@ -71,14 +71,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-04",
-      "name": "BLUE 04 ROW 2 -> REAR SCORE",
+      "id": "blue-cero-04-04-row-2-score",
+      "name": "BLUE 04 ROW 2 -> SCORE",
       "endPoint": {
         "x": 60,
         "y": 83,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 312.273689,
+        "endDeg": -47.726311,
         "locked": false
       },
       "controlPoints": [
@@ -96,13 +96,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-05",
+      "id": "blue-cero-05-05-score-row-1-ready",
       "name": "BLUE 05 SCORE -> ROW 1 READY",
       "endPoint": {
-        "x": 45,
+        "x": 54,
         "y": 83,
         "heading": "linear",
-        "startDeg": 312.273689,
+        "startDeg": -47.726311,
         "endDeg": 180,
         "locked": false
       },
@@ -115,7 +115,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-06",
+      "id": "blue-cero-06-06-collect-row-1",
       "name": "BLUE 06 COLLECT ROW 1",
       "endPoint": {
         "x": 19,
@@ -134,18 +134,18 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-07",
-      "name": "BLUE 07 ROW 1 -> REAR SCORE",
+      "id": "blue-cero-07-07-row-1-score",
+      "name": "BLUE 07 ROW 1 -> SCORE",
       "endPoint": {
         "x": 60,
         "y": 83,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 312.273689,
+        "endDeg": -47.726311,
         "locked": false
       },
       "controlPoints": [],
-      "color": "#ec4899",
+      "color": "#ef4444",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -153,20 +153,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-08",
+      "id": "blue-cero-08-08-score-row-3-ready",
       "name": "BLUE 08 SCORE -> ROW 3 READY",
       "endPoint": {
-        "x": 60.498387,
+        "x": 55,
         "y": 36,
         "heading": "linear",
-        "startDeg": 312.273689,
+        "startDeg": -47.726311,
         "endDeg": 180,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 57.162097,
-          "y": 42.416129,
+          "x": 55,
+          "y": 42.416129032258056,
           "locked": false
         }
       ],
@@ -178,7 +178,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-09",
+      "id": "blue-cero-09-09-collect-row-3",
       "name": "BLUE 09 COLLECT ROW 3",
       "endPoint": {
         "x": 12,
@@ -197,18 +197,18 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-10",
-      "name": "BLUE 10 ROW 3 -> FINAL REAR SCORE",
+      "id": "blue-cero-10-10-row-3-final-score",
+      "name": "BLUE 10 ROW 3 -> FINAL SCORE",
       "endPoint": {
         "x": 59.923,
         "y": 107.923,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 328.93239,
+        "endDeg": -31.06761,
         "locked": false
       },
       "controlPoints": [],
-      "color": "#ef4444",
+      "color": "#8b5cf6",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -216,18 +216,18 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cero-11",
+      "id": "blue-cero-11-11-final-score-park",
       "name": "BLUE 11 FINAL SCORE -> PARK",
       "endPoint": {
         "x": 58,
         "y": 108.9,
         "heading": "linear",
-        "startDeg": 328.93239,
+        "startDeg": -31.06761,
         "endDeg": 180,
         "locked": false
       },
       "controlPoints": [],
-      "color": "#8b5cf6",
+      "color": "#10b981",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -321,94 +321,164 @@
   "sequence": [
     {
       "kind": "path",
-      "lineId": "blue-cero-01"
+      "lineId": "blue-cero-01-01-start-preload-score"
     },
     {
       "kind": "wait",
-      "id": "blue-cero-01-shoot",
-      "name": "BLUE rear shoot",
-      "durationMs": 925,
+      "id": "blue-cero-wait-01-01-fire",
+      "name": "BLUE 01 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-02"
+      "lineId": "blue-cero-02-02-score-row-2-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-03"
+      "lineId": "blue-cero-03-03-collect-row-2"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-04"
+      "lineId": "blue-cero-04-04-row-2-score"
     },
     {
       "kind": "wait",
-      "id": "blue-cero-04-shoot",
-      "name": "BLUE rear shoot",
-      "durationMs": 925,
+      "id": "blue-cero-wait-02-04-fire",
+      "name": "BLUE 04 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-05"
+      "lineId": "blue-cero-05-05-score-row-1-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-06"
+      "lineId": "blue-cero-06-06-collect-row-1"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-07"
+      "lineId": "blue-cero-07-07-row-1-score"
     },
     {
       "kind": "wait",
-      "id": "blue-cero-07-shoot",
-      "name": "BLUE rear shoot",
-      "durationMs": 925,
+      "id": "blue-cero-wait-03-07-fire",
+      "name": "BLUE 07 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-08"
+      "lineId": "blue-cero-08-08-score-row-3-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-09"
+      "lineId": "blue-cero-09-09-collect-row-3"
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-10"
+      "lineId": "blue-cero-10-10-row-3-final-score"
     },
     {
       "kind": "wait",
-      "id": "blue-cero-10-shoot",
-      "name": "BLUE rear shoot",
-      "durationMs": 925,
+      "id": "blue-cero-wait-04-10-fire",
+      "name": "BLUE 10 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-cero-11"
+      "lineId": "blue-cero-11-11-final-score-park"
     }
   ],
   "pathChains": [
     {
-      "id": "blue-auto-cero",
-      "name": "BLUE AutoCero Close Zero Door Rear Shooter",
-      "color": "#2563eb",
+      "id": "blue-cero-01-01-start-preload-score-chain",
+      "name": "BLUE 01 START -> PRELOAD SCORE",
+      "color": "#facc15",
       "lineIds": [
-        "blue-cero-01",
-        "blue-cero-02",
-        "blue-cero-03",
-        "blue-cero-04",
-        "blue-cero-05",
-        "blue-cero-06",
-        "blue-cero-07",
-        "blue-cero-08",
-        "blue-cero-09",
-        "blue-cero-10",
-        "blue-cero-11"
+        "blue-cero-01-01-start-preload-score"
+      ]
+    },
+    {
+      "id": "blue-cero-02-02-score-row-2-ready-chain",
+      "name": "BLUE 02 SCORE -> ROW 2 READY",
+      "color": "#22c55e",
+      "lineIds": [
+        "blue-cero-02-02-score-row-2-ready"
+      ]
+    },
+    {
+      "id": "blue-cero-03-03-collect-row-2-chain",
+      "name": "BLUE 03 COLLECT ROW 2",
+      "color": "#3b82f6",
+      "lineIds": [
+        "blue-cero-03-03-collect-row-2"
+      ]
+    },
+    {
+      "id": "blue-cero-04-04-row-2-score-chain",
+      "name": "BLUE 04 ROW 2 -> SCORE",
+      "color": "#f97316",
+      "lineIds": [
+        "blue-cero-04-04-row-2-score"
+      ]
+    },
+    {
+      "id": "blue-cero-05-05-score-row-1-ready-chain",
+      "name": "BLUE 05 SCORE -> ROW 1 READY",
+      "color": "#a855f7",
+      "lineIds": [
+        "blue-cero-05-05-score-row-1-ready"
+      ]
+    },
+    {
+      "id": "blue-cero-06-06-collect-row-1-chain",
+      "name": "BLUE 06 COLLECT ROW 1",
+      "color": "#14b8a6",
+      "lineIds": [
+        "blue-cero-06-06-collect-row-1"
+      ]
+    },
+    {
+      "id": "blue-cero-07-07-row-1-score-chain",
+      "name": "BLUE 07 ROW 1 -> SCORE",
+      "color": "#ef4444",
+      "lineIds": [
+        "blue-cero-07-07-row-1-score"
+      ]
+    },
+    {
+      "id": "blue-cero-08-08-score-row-3-ready-chain",
+      "name": "BLUE 08 SCORE -> ROW 3 READY",
+      "color": "#84cc16",
+      "lineIds": [
+        "blue-cero-08-08-score-row-3-ready"
+      ]
+    },
+    {
+      "id": "blue-cero-09-09-collect-row-3-chain",
+      "name": "BLUE 09 COLLECT ROW 3",
+      "color": "#06b6d4",
+      "lineIds": [
+        "blue-cero-09-09-collect-row-3"
+      ]
+    },
+    {
+      "id": "blue-cero-10-10-row-3-final-score-chain",
+      "name": "BLUE 10 ROW 3 -> FINAL SCORE",
+      "color": "#8b5cf6",
+      "lineIds": [
+        "blue-cero-10-10-row-3-final-score"
+      ]
+    },
+    {
+      "id": "blue-cero-11-11-final-score-park-chain",
+      "name": "BLUE 11 FINAL SCORE -> PARK",
+      "color": "#10b981",
+      "lineIds": [
+        "blue-cero-11-11-final-score-park"
       ]
     }
   ]

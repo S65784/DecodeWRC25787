@@ -59,7 +59,7 @@
         "y": 12,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": -107.5,
+        "endDeg": -108.2,
         "locked": false
       },
       "controlPoints": [
@@ -83,7 +83,7 @@
         "x": 91.29032258064515,
         "y": 36,
         "heading": "linear",
-        "startDeg": -107.5,
+        "startDeg": -108.2,
         "endDeg": 0,
         "locked": false
       },
@@ -122,7 +122,7 @@
         "y": 12,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": -107.5,
+        "endDeg": -108.2,
         "locked": false
       },
       "controlPoints": [],
@@ -140,7 +140,7 @@
         "x": 109.548,
         "y": 13.465,
         "heading": "linear",
-        "startDeg": -107.5,
+        "startDeg": -108.2,
         "endDeg": 40,
         "locked": false
       },
@@ -229,7 +229,7 @@
         "y": 12,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": -109,
+        "endDeg": -108,
         "locked": false
       },
       "controlPoints": [
@@ -253,7 +253,7 @@
         "x": 109.548,
         "y": 13.465,
         "heading": "linear",
-        "startDeg": -109,
+        "startDeg": -108,
         "endDeg": 40,
         "locked": false
       },
@@ -319,11 +319,11 @@
       "id": "red-ocho-15-15-score-4-pickup-a3",
       "name": "RED 15 SCORE 4 -> PICKUP A3",
       "endPoint": {
-        "x": 132.83041674893587,
+        "x": 130,
         "y": 11,
         "heading": "linear",
         "startDeg": -109,
-        "endDeg": 270,
+        "endDeg": 0,
         "locked": false
       },
       "controlPoints": [],
@@ -341,7 +341,7 @@
         "x": 89,
         "y": 12,
         "heading": "linear",
-        "startDeg": 270,
+        "startDeg": 0,
         "endDeg": -109,
         "locked": false
       },
@@ -386,7 +386,7 @@
         "y": 46.706,
         "heading": "linear",
         "startDeg": 40,
-        "endDeg": 40,
+        "endDeg": 50,
         "locked": false
       },
       "controlPoints": [
@@ -410,7 +410,7 @@
         "x": 89,
         "y": 12.5,
         "heading": "linear",
-        "startDeg": 40,
+        "startDeg": 50,
         "endDeg": -109,
         "locked": false
       },

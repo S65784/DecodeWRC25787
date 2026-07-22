@@ -3,19 +3,19 @@
     "x": 79.725,
     "y": 9.431,
     "heading": "constant",
-    "degrees": 270,
+    "degrees": -90,
     "locked": false
   },
   "lines": [
     {
-      "id": "red-siete-preload-to-score",
-      "name": "RED PRELOAD_TO_SCORE",
+      "id": "red-siete-01-01-preload-score",
+      "name": "RED 01 PRELOAD -> SCORE",
       "endPoint": {
         "x": 89,
         "y": 12,
         "heading": "linear",
-        "startDeg": 270,
-        "endDeg": 254,
+        "startDeg": -90,
+        "endDeg": -106,
         "locked": false
       },
       "controlPoints": [],
@@ -27,20 +27,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-to-pickup-a1",
-      "name": "RED SCORE_TO_PICKUP_A1",
+      "id": "red-siete-02-02-score-pickup-a1",
+      "name": "RED 02 SCORE -> PICKUP A1",
       "endPoint": {
         "x": 132.174,
         "y": 8.174,
         "heading": "linear",
-        "startDeg": 254,
+        "startDeg": -106,
         "endDeg": 0,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 127.002419,
-          "y": 31.604032,
+          "x": 127.00241903225806,
+          "y": 31.604032387096776,
           "locked": false
         }
       ],
@@ -52,14 +52,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-pickup-a1-to-score-1",
-      "name": "RED PICKUP_A1_TO_SCORE_1",
+      "id": "red-siete-03-03-pickup-a1-score-1",
+      "name": "RED 03 PICKUP A1 -> SCORE 1",
       "endPoint": {
         "x": 89,
         "y": 12,
         "heading": "linear",
         "startDeg": 0,
-        "endDeg": 252.5,
+        "endDeg": -108,
         "locked": false
       },
       "controlPoints": [
@@ -77,13 +77,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-1-to-prepickup-b1",
-      "name": "RED SCORE_1_TO_PREPICKUP_B1",
+      "id": "red-siete-04-04-score-1-prepickup-b1",
+      "name": "RED 04 SCORE 1 -> PREPICKUP B1",
       "endPoint": {
         "x": 109.548,
         "y": 13.465,
         "heading": "linear",
-        "startDeg": 252.5,
+        "startDeg": -108,
         "endDeg": 40,
         "locked": false
       },
@@ -96,11 +96,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-prepickup-b1-to-pickup-b1",
-      "name": "RED PREPICKUP_B1_TO_PICKUP_B1",
+      "id": "red-siete-05-05-prepickup-b1-pickup-b1",
+      "name": "RED 05 PREPICKUP B1 -> PICKUP B1",
       "endPoint": {
-        "x": 131.086806,
-        "y": 17.493097,
+        "x": 131.08680645161292,
+        "y": 17.493096774193557,
         "heading": "linear",
         "startDeg": 40,
         "endDeg": 50,
@@ -108,8 +108,8 @@
       },
       "controlPoints": [
         {
-          "x": 134.425161,
-          "y": 11.639774,
+          "x": 134.42516129032254,
+          "y": 11.639774193548401,
           "locked": false
         }
       ],
@@ -121,14 +121,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-pickup-b1-to-score-2",
-      "name": "RED PICKUP_B1_TO_SCORE_2",
+      "id": "red-siete-06-06-pickup-b1-score-2",
+      "name": "RED 06 PICKUP B1 -> SCORE 2",
       "endPoint": {
         "x": 89,
         "y": 12.5,
         "heading": "linear",
         "startDeg": 50,
-        "endDeg": 252,
+        "endDeg": -108,
         "locked": false
       },
       "controlPoints": [
@@ -146,24 +146,24 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-2-to-pickup-a2",
-      "name": "RED SCORE_2_TO_PICKUP_A2",
+      "id": "red-siete-07-07-score-2-pickup-a2",
+      "name": "RED 07 SCORE 2 -> PICKUP A2",
       "endPoint": {
-        "x": 132.830417,
+        "x": 132.83041674893587,
         "y": 11,
         "heading": "linear",
-        "startDeg": 252,
+        "startDeg": -108,
         "endDeg": 270,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 140.617628,
-          "y": 28.464704,
+          "x": 140.61762772930666,
+          "y": 28.464703606145186,
           "locked": false
         }
       ],
-      "color": "#ec4899",
+      "color": "#ef4444",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -171,14 +171,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-pickup-a2-to-score-3",
-      "name": "RED PICKUP_A2_TO_SCORE_3",
+      "id": "red-siete-08-08-pickup-a2-score-3",
+      "name": "RED 08 PICKUP A2 -> SCORE 3",
       "endPoint": {
         "x": 89,
         "y": 12,
         "heading": "linear",
         "startDeg": 270,
-        "endDeg": 251,
+        "endDeg": -109,
         "locked": false
       },
       "controlPoints": [
@@ -196,13 +196,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-3-to-prepickup-b2",
-      "name": "RED SCORE_3_TO_PREPICKUP_B2",
+      "id": "red-siete-09-09-score-3-prepickup-b2",
+      "name": "RED 09 SCORE 3 -> PREPICKUP B2",
       "endPoint": {
         "x": 109.548,
         "y": 13.465,
         "heading": "linear",
-        "startDeg": 251,
+        "startDeg": -109,
         "endDeg": 40,
         "locked": false
       },
@@ -215,11 +215,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-prepickup-b2-to-pickup-b2",
-      "name": "RED PREPICKUP_B2_TO_PICKUP_B2",
+      "id": "red-siete-10-10-prepickup-b2-pickup-b2",
+      "name": "RED 10 PREPICKUP B2 -> PICKUP B2",
       "endPoint": {
-        "x": 131.086806,
-        "y": 17.493097,
+        "x": 131.08680645161292,
+        "y": 17.493096774193557,
         "heading": "linear",
         "startDeg": 40,
         "endDeg": 50,
@@ -227,33 +227,8 @@
       },
       "controlPoints": [
         {
-          "x": 134.425161,
-          "y": 11.639774,
-          "locked": false
-        }
-      ],
-      "color": "#ef4444",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "red-siete-pickup-b2-to-score-4",
-      "name": "RED PICKUP_B2_TO_SCORE_4",
-      "endPoint": {
-        "x": 89,
-        "y": 12.5,
-        "heading": "linear",
-        "startDeg": 50,
-        "endDeg": 251,
-        "locked": false
-      },
-      "controlPoints": [
-        {
-          "x": 113.695,
-          "y": 25.131,
+          "x": 134.42516129032254,
+          "y": 11.639774193548401,
           "locked": false
         }
       ],
@@ -265,20 +240,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-4-to-pickup-a3",
-      "name": "RED SCORE_4_TO_PICKUP_A3",
+      "id": "red-siete-11-11-pickup-b2-score-4",
+      "name": "RED 11 PICKUP B2 -> SCORE 4",
       "endPoint": {
-        "x": 132.830417,
-        "y": 11,
+        "x": 89,
+        "y": 12.5,
         "heading": "linear",
-        "startDeg": 251,
-        "endDeg": 270,
+        "startDeg": 50,
+        "endDeg": -109,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 140.389402,
-          "y": 28.464704,
+          "x": 113.695,
+          "y": 25.131,
           "locked": false
         }
       ],
@@ -290,20 +265,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-pickup-a3-to-score-5",
-      "name": "RED PICKUP_A3_TO_SCORE_5",
+      "id": "red-siete-12-12-score-4-pickup-a3",
+      "name": "RED 12 SCORE 4 -> PICKUP A3",
       "endPoint": {
-        "x": 89,
-        "y": 12,
+        "x": 132.83041674893587,
+        "y": 11,
         "heading": "linear",
-        "startDeg": 270,
-        "endDeg": 251,
+        "startDeg": -109,
+        "endDeg": 270,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 120.857,
-          "y": 17.619,
+          "x": 140.38940192285503,
+          "y": 28.464703606145186,
           "locked": false
         }
       ],
@@ -315,17 +290,23 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-5-to-prepickup-b3",
-      "name": "RED SCORE_5_TO_PREPICKUP_B3",
+      "id": "red-siete-13-13-pickup-a3-score-5",
+      "name": "RED 13 PICKUP A3 -> SCORE 5",
       "endPoint": {
-        "x": 109.548,
-        "y": 13.465,
+        "x": 89,
+        "y": 12,
         "heading": "linear",
-        "startDeg": 251,
-        "endDeg": 40,
+        "startDeg": 270,
+        "endDeg": -109,
         "locked": false
       },
-      "controlPoints": [],
+      "controlPoints": [
+        {
+          "x": 120.857,
+          "y": 17.619,
+          "locked": false
+        }
+      ],
       "color": "#6366f1",
       "locked": false,
       "waitBeforeMs": 0,
@@ -334,23 +315,17 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-prepickup-b3-to-pickup-b3",
-      "name": "RED PREPICKUP_B3_TO_PICKUP_B3",
+      "id": "red-siete-14-14-score-5-prepickup-b3",
+      "name": "RED 14 SCORE 5 -> PREPICKUP B3",
       "endPoint": {
-        "x": 131.086806,
-        "y": 17.493097,
+        "x": 109.548,
+        "y": 13.465,
         "heading": "linear",
-        "startDeg": 40,
-        "endDeg": 50,
+        "startDeg": -109,
+        "endDeg": 40,
         "locked": false
       },
-      "controlPoints": [
-        {
-          "x": 134.425161,
-          "y": 11.639774,
-          "locked": false
-        }
-      ],
+      "controlPoints": [],
       "color": "#0ea5e9",
       "locked": false,
       "waitBeforeMs": 0,
@@ -359,20 +334,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-pickup-b3-to-score-6",
-      "name": "RED PICKUP_B3_TO_SCORE_6",
+      "id": "red-siete-15-15-prepickup-b3-pickup-b3",
+      "name": "RED 15 PREPICKUP B3 -> PICKUP B3",
       "endPoint": {
-        "x": 89,
-        "y": 12.5,
+        "x": 129.261,
+        "y": 46.706,
         "heading": "linear",
-        "startDeg": 50,
-        "endDeg": 251,
+        "startDeg": 40,
+        "endDeg": 50,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 113.695,
-          "y": 25.131,
+          "x": 134.42516129032254,
+          "y": 11.639774193548401,
           "locked": false
         }
       ],
@@ -384,24 +359,49 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-siete-score-6-to-park",
-      "name": "RED SCORE_6_TO_PARK",
+      "id": "red-siete-16-16-pickup-b3-score-6",
+      "name": "RED 16 PICKUP B3 -> SCORE 6",
       "endPoint": {
-        "x": 115.582258,
-        "y": 22.675806,
+        "x": 89,
+        "y": 12.5,
         "heading": "linear",
-        "startDeg": 251,
+        "startDeg": 50,
+        "endDeg": -109,
+        "locked": false
+      },
+      "controlPoints": [
+        {
+          "x": 113.695,
+          "y": 25.131,
+          "locked": false
+        }
+      ],
+      "color": "#65a30d",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "red-siete-17-17-score-6-park",
+      "name": "RED 17 SCORE 6 -> PARK",
+      "endPoint": {
+        "x": 115.58225806451613,
+        "y": 22.67580645161289,
+        "heading": "linear",
+        "startDeg": -109,
         "endDeg": 0,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 98.017742,
-          "y": 24.529032,
+          "x": 98.01774193548384,
+          "y": 24.5290322580645,
           "locked": false
         }
       ],
-      "color": "#65a30d",
+      "color": "#fb7185",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -495,348 +495,348 @@
   "sequence": [
     {
       "kind": "path",
-      "lineId": "red-siete-preload-to-score"
+      "lineId": "red-siete-01-01-preload-score"
     },
     {
       "kind": "wait",
-      "id": "red-siete-preload-to-score-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-01-01-preload-settle",
+      "name": "RED 01 PRELOAD SETTLE",
       "durationMs": 350,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-preload-to-score-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-02-01-fire-preload",
+      "name": "RED 01 FIRE PRELOAD",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-to-pickup-a1"
+      "lineId": "red-siete-02-02-score-pickup-a1"
     },
     {
       "kind": "wait",
-      "id": "red-siete-score-to-pickup-a1-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-03-02-pickup-a1-dwell",
+      "name": "RED 02 PICKUP A1 DWELL",
       "durationMs": 90,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-a1-to-score-1"
+      "lineId": "red-siete-03-03-pickup-a1-score-1"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a1-to-score-1-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-04-03-a1-score-settle",
+      "name": "RED 03 A1 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a1-to-score-1-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-05-03-fire-score-1",
+      "name": "RED 03 FIRE SCORE 1",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-1-to-prepickup-b1"
+      "lineId": "red-siete-04-04-score-1-prepickup-b1"
     },
     {
       "kind": "path",
-      "lineId": "red-siete-prepickup-b1-to-pickup-b1"
+      "lineId": "red-siete-05-05-prepickup-b1-pickup-b1"
     },
     {
       "kind": "wait",
-      "id": "red-siete-prepickup-b1-to-pickup-b1-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-06-05-pickup-b1-dwell",
+      "name": "RED 05 PICKUP B1 DWELL",
       "durationMs": 250,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-b1-to-score-2"
+      "lineId": "red-siete-06-06-pickup-b1-score-2"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b1-to-score-2-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-07-06-b1-score-settle",
+      "name": "RED 06 B1 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b1-to-score-2-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-08-06-fire-score-2",
+      "name": "RED 06 FIRE SCORE 2",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-2-to-pickup-a2"
+      "lineId": "red-siete-07-07-score-2-pickup-a2"
     },
     {
       "kind": "wait",
-      "id": "red-siete-score-2-to-pickup-a2-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-09-07-pickup-a2-dwell",
+      "name": "RED 07 PICKUP A2 DWELL",
       "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-a2-to-score-3"
+      "lineId": "red-siete-08-08-pickup-a2-score-3"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a2-to-score-3-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-10-08-a2-score-settle",
+      "name": "RED 08 A2 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a2-to-score-3-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-11-08-fire-score-3",
+      "name": "RED 08 FIRE SCORE 3",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-3-to-prepickup-b2"
+      "lineId": "red-siete-09-09-score-3-prepickup-b2"
     },
     {
       "kind": "path",
-      "lineId": "red-siete-prepickup-b2-to-pickup-b2"
+      "lineId": "red-siete-10-10-prepickup-b2-pickup-b2"
     },
     {
       "kind": "wait",
-      "id": "red-siete-prepickup-b2-to-pickup-b2-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-12-10-pickup-b2-dwell",
+      "name": "RED 10 PICKUP B2 DWELL",
       "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-b2-to-score-4"
+      "lineId": "red-siete-11-11-pickup-b2-score-4"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b2-to-score-4-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-13-11-b2-score-settle",
+      "name": "RED 11 B2 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b2-to-score-4-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-14-11-fire-score-4",
+      "name": "RED 11 FIRE SCORE 4",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-4-to-pickup-a3"
+      "lineId": "red-siete-12-12-score-4-pickup-a3"
     },
     {
       "kind": "wait",
-      "id": "red-siete-score-4-to-pickup-a3-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-15-12-pickup-a3-dwell",
+      "name": "RED 12 PICKUP A3 DWELL",
       "durationMs": 150,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-a3-to-score-5"
+      "lineId": "red-siete-13-13-pickup-a3-score-5"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a3-to-score-5-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-16-13-a3-score-settle",
+      "name": "RED 13 A3 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-a3-to-score-5-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-17-13-fire-score-5",
+      "name": "RED 13 FIRE SCORE 5",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-5-to-prepickup-b3"
+      "lineId": "red-siete-14-14-score-5-prepickup-b3"
     },
     {
       "kind": "path",
-      "lineId": "red-siete-prepickup-b3-to-pickup-b3"
+      "lineId": "red-siete-15-15-prepickup-b3-pickup-b3"
     },
     {
       "kind": "wait",
-      "id": "red-siete-prepickup-b3-to-pickup-b3-collect",
-      "name": "RED pickup dwell",
+      "id": "red-siete-wait-18-15-pickup-b3-dwell",
+      "name": "RED 15 PICKUP B3 DWELL",
       "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-pickup-b3-to-score-6"
+      "lineId": "red-siete-16-16-pickup-b3-score-6"
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b3-to-score-6-settle",
-      "name": "RED chassis settle",
+      "id": "red-siete-wait-19-16-b3-score-settle",
+      "name": "RED 16 B3 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "red-siete-pickup-b3-to-score-6-shoot",
-      "name": "RED rear shoot",
+      "id": "red-siete-wait-20-16-fire-score-6",
+      "name": "RED 16 FIRE SCORE 6",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-siete-score-6-to-park"
+      "lineId": "red-siete-17-17-score-6-park"
     }
   ],
   "pathChains": [
     {
-      "id": "red-siete-preload-to-score-chain",
-      "name": "RED PRELOAD_TO_SCORE",
+      "id": "red-siete-01-01-preload-score-chain",
+      "name": "RED 01 PRELOAD -> SCORE",
       "color": "#facc15",
       "lineIds": [
-        "red-siete-preload-to-score"
+        "red-siete-01-01-preload-score"
       ]
     },
     {
-      "id": "red-siete-score-to-pickup-a1-chain",
-      "name": "RED SCORE_TO_PICKUP_A1",
+      "id": "red-siete-02-02-score-pickup-a1-chain",
+      "name": "RED 02 SCORE -> PICKUP A1",
       "color": "#22c55e",
       "lineIds": [
-        "red-siete-score-to-pickup-a1"
+        "red-siete-02-02-score-pickup-a1"
       ]
     },
     {
-      "id": "red-siete-pickup-a1-to-score-1-chain",
-      "name": "RED PICKUP_A1_TO_SCORE_1",
+      "id": "red-siete-03-03-pickup-a1-score-1-chain",
+      "name": "RED 03 PICKUP A1 -> SCORE 1",
       "color": "#3b82f6",
       "lineIds": [
-        "red-siete-pickup-a1-to-score-1"
+        "red-siete-03-03-pickup-a1-score-1"
       ]
     },
     {
-      "id": "red-siete-score-1-to-prepickup-b1-chain",
-      "name": "RED SCORE_1_TO_PREPICKUP_B1",
+      "id": "red-siete-04-04-score-1-prepickup-b1-chain",
+      "name": "RED 04 SCORE 1 -> PREPICKUP B1",
       "color": "#f97316",
       "lineIds": [
-        "red-siete-score-1-to-prepickup-b1"
+        "red-siete-04-04-score-1-prepickup-b1"
       ]
     },
     {
-      "id": "red-siete-prepickup-b1-to-pickup-b1-chain",
-      "name": "RED PREPICKUP_B1_TO_PICKUP_B1",
+      "id": "red-siete-05-05-prepickup-b1-pickup-b1-chain",
+      "name": "RED 05 PREPICKUP B1 -> PICKUP B1",
       "color": "#a855f7",
       "lineIds": [
-        "red-siete-prepickup-b1-to-pickup-b1"
+        "red-siete-05-05-prepickup-b1-pickup-b1"
       ]
     },
     {
-      "id": "red-siete-pickup-b1-to-score-2-chain",
-      "name": "RED PICKUP_B1_TO_SCORE_2",
+      "id": "red-siete-06-06-pickup-b1-score-2-chain",
+      "name": "RED 06 PICKUP B1 -> SCORE 2",
       "color": "#14b8a6",
       "lineIds": [
-        "red-siete-pickup-b1-to-score-2"
+        "red-siete-06-06-pickup-b1-score-2"
       ]
     },
     {
-      "id": "red-siete-score-2-to-pickup-a2-chain",
-      "name": "RED SCORE_2_TO_PICKUP_A2",
-      "color": "#ec4899",
-      "lineIds": [
-        "red-siete-score-2-to-pickup-a2"
-      ]
-    },
-    {
-      "id": "red-siete-pickup-a2-to-score-3-chain",
-      "name": "RED PICKUP_A2_TO_SCORE_3",
-      "color": "#84cc16",
-      "lineIds": [
-        "red-siete-pickup-a2-to-score-3"
-      ]
-    },
-    {
-      "id": "red-siete-score-3-to-prepickup-b2-chain",
-      "name": "RED SCORE_3_TO_PREPICKUP_B2",
-      "color": "#06b6d4",
-      "lineIds": [
-        "red-siete-score-3-to-prepickup-b2"
-      ]
-    },
-    {
-      "id": "red-siete-prepickup-b2-to-pickup-b2-chain",
-      "name": "RED PREPICKUP_B2_TO_PICKUP_B2",
+      "id": "red-siete-07-07-score-2-pickup-a2-chain",
+      "name": "RED 07 SCORE 2 -> PICKUP A2",
       "color": "#ef4444",
       "lineIds": [
-        "red-siete-prepickup-b2-to-pickup-b2"
+        "red-siete-07-07-score-2-pickup-a2"
       ]
     },
     {
-      "id": "red-siete-pickup-b2-to-score-4-chain",
-      "name": "RED PICKUP_B2_TO_SCORE_4",
+      "id": "red-siete-08-08-pickup-a2-score-3-chain",
+      "name": "RED 08 PICKUP A2 -> SCORE 3",
+      "color": "#84cc16",
+      "lineIds": [
+        "red-siete-08-08-pickup-a2-score-3"
+      ]
+    },
+    {
+      "id": "red-siete-09-09-score-3-prepickup-b2-chain",
+      "name": "RED 09 SCORE 3 -> PREPICKUP B2",
+      "color": "#06b6d4",
+      "lineIds": [
+        "red-siete-09-09-score-3-prepickup-b2"
+      ]
+    },
+    {
+      "id": "red-siete-10-10-prepickup-b2-pickup-b2-chain",
+      "name": "RED 10 PREPICKUP B2 -> PICKUP B2",
       "color": "#8b5cf6",
       "lineIds": [
-        "red-siete-pickup-b2-to-score-4"
+        "red-siete-10-10-prepickup-b2-pickup-b2"
       ]
     },
     {
-      "id": "red-siete-score-4-to-pickup-a3-chain",
-      "name": "RED SCORE_4_TO_PICKUP_A3",
+      "id": "red-siete-11-11-pickup-b2-score-4-chain",
+      "name": "RED 11 PICKUP B2 -> SCORE 4",
       "color": "#10b981",
       "lineIds": [
-        "red-siete-score-4-to-pickup-a3"
+        "red-siete-11-11-pickup-b2-score-4"
       ]
     },
     {
-      "id": "red-siete-pickup-a3-to-score-5-chain",
-      "name": "RED PICKUP_A3_TO_SCORE_5",
+      "id": "red-siete-12-12-score-4-pickup-a3-chain",
+      "name": "RED 12 SCORE 4 -> PICKUP A3",
       "color": "#eab308",
       "lineIds": [
-        "red-siete-pickup-a3-to-score-5"
+        "red-siete-12-12-score-4-pickup-a3"
       ]
     },
     {
-      "id": "red-siete-score-5-to-prepickup-b3-chain",
-      "name": "RED SCORE_5_TO_PREPICKUP_B3",
+      "id": "red-siete-13-13-pickup-a3-score-5-chain",
+      "name": "RED 13 PICKUP A3 -> SCORE 5",
       "color": "#6366f1",
       "lineIds": [
-        "red-siete-score-5-to-prepickup-b3"
+        "red-siete-13-13-pickup-a3-score-5"
       ]
     },
     {
-      "id": "red-siete-prepickup-b3-to-pickup-b3-chain",
-      "name": "RED PREPICKUP_B3_TO_PICKUP_B3",
+      "id": "red-siete-14-14-score-5-prepickup-b3-chain",
+      "name": "RED 14 SCORE 5 -> PREPICKUP B3",
       "color": "#0ea5e9",
       "lineIds": [
-        "red-siete-prepickup-b3-to-pickup-b3"
+        "red-siete-14-14-score-5-prepickup-b3"
       ]
     },
     {
-      "id": "red-siete-pickup-b3-to-score-6-chain",
-      "name": "RED PICKUP_B3_TO_SCORE_6",
+      "id": "red-siete-15-15-prepickup-b3-pickup-b3-chain",
+      "name": "RED 15 PREPICKUP B3 -> PICKUP B3",
       "color": "#d946ef",
       "lineIds": [
-        "red-siete-pickup-b3-to-score-6"
+        "red-siete-15-15-prepickup-b3-pickup-b3"
       ]
     },
     {
-      "id": "red-siete-score-6-to-park-chain",
-      "name": "RED SCORE_6_TO_PARK",
+      "id": "red-siete-16-16-pickup-b3-score-6-chain",
+      "name": "RED 16 PICKUP B3 -> SCORE 6",
       "color": "#65a30d",
       "lineIds": [
-        "red-siete-score-6-to-park"
+        "red-siete-16-16-pickup-b3-score-6"
+      ]
+    },
+    {
+      "id": "red-siete-17-17-score-6-park-chain",
+      "name": "RED 17 SCORE 6 -> PARK",
+      "color": "#fb7185",
+      "lineIds": [
+        "red-siete-17-17-score-6-park"
       ]
     }
   ]

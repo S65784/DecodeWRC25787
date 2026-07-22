@@ -8,8 +8,8 @@
   },
   "lines": [
     {
-      "id": "blue-siete-preload-to-score",
-      "name": "BLUE PRELOAD_TO_SCORE",
+      "id": "blue-siete-01-01-preload-score",
+      "name": "BLUE 01 PRELOAD -> SCORE",
       "endPoint": {
         "x": 55,
         "y": 12,
@@ -27,8 +27,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-to-pickup-a1",
-      "name": "BLUE SCORE_TO_PICKUP_A1",
+      "id": "blue-siete-02-02-score-pickup-a1",
+      "name": "BLUE 02 SCORE -> PICKUP A1",
       "endPoint": {
         "x": 11.826,
         "y": 8.174,
@@ -39,8 +39,8 @@
       },
       "controlPoints": [
         {
-          "x": 16.997581,
-          "y": 31.604032,
+          "x": 16.99758096774194,
+          "y": 31.604032387096776,
           "locked": false
         }
       ],
@@ -52,14 +52,14 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-pickup-a1-to-score-1",
-      "name": "BLUE PICKUP_A1_TO_SCORE_1",
+      "id": "blue-siete-03-03-pickup-a1-score-1",
+      "name": "BLUE 03 PICKUP A1 -> SCORE 1",
       "endPoint": {
         "x": 55,
         "y": 12,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 287.5,
+        "endDeg": 288,
         "locked": false
       },
       "controlPoints": [
@@ -77,13 +77,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-1-to-prepickup-b1",
-      "name": "BLUE SCORE_1_TO_PREPICKUP_B1",
+      "id": "blue-siete-04-04-score-1-prepickup-b1",
+      "name": "BLUE 04 SCORE 1 -> PREPICKUP B1",
       "endPoint": {
         "x": 34.452,
         "y": 13.465,
         "heading": "linear",
-        "startDeg": 287.5,
+        "startDeg": 288,
         "endDeg": 140,
         "locked": false
       },
@@ -96,11 +96,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-prepickup-b1-to-pickup-b1",
-      "name": "BLUE PREPICKUP_B1_TO_PICKUP_B1",
+      "id": "blue-siete-05-05-prepickup-b1-pickup-b1",
+      "name": "BLUE 05 PREPICKUP B1 -> PICKUP B1",
       "endPoint": {
-        "x": 12.913194,
-        "y": 17.493097,
+        "x": 12.91319354838708,
+        "y": 17.493096774193557,
         "heading": "linear",
         "startDeg": 140,
         "endDeg": 130,
@@ -108,8 +108,8 @@
       },
       "controlPoints": [
         {
-          "x": 9.574839,
-          "y": 11.639774,
+          "x": 9.57483870967746,
+          "y": 11.639774193548401,
           "locked": false
         }
       ],
@@ -121,8 +121,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-pickup-b1-to-score-2",
-      "name": "BLUE PICKUP_B1_TO_SCORE_2",
+      "id": "blue-siete-06-06-pickup-b1-score-2",
+      "name": "BLUE 06 PICKUP B1 -> SCORE 2",
       "endPoint": {
         "x": 55,
         "y": 12.5,
@@ -146,24 +146,24 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-2-to-pickup-a2",
-      "name": "BLUE SCORE_2_TO_PICKUP_A2",
+      "id": "blue-siete-07-07-score-2-pickup-a2",
+      "name": "BLUE 07 SCORE 2 -> PICKUP A2",
       "endPoint": {
-        "x": 11.169583,
+        "x": 11.16958325106413,
         "y": 11,
         "heading": "linear",
         "startDeg": 288,
-        "endDeg": 270,
+        "endDeg": -90,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 3.382372,
-          "y": 28.464704,
+          "x": 3.38237227069334,
+          "y": 28.464703606145186,
           "locked": false
         }
       ],
-      "color": "#ec4899",
+      "color": "#ef4444",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -171,13 +171,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-pickup-a2-to-score-3",
-      "name": "BLUE PICKUP_A2_TO_SCORE_3",
+      "id": "blue-siete-08-08-pickup-a2-score-3",
+      "name": "BLUE 08 PICKUP A2 -> SCORE 3",
       "endPoint": {
         "x": 55,
         "y": 12,
         "heading": "linear",
-        "startDeg": 270,
+        "startDeg": -90,
         "endDeg": 289,
         "locked": false
       },
@@ -196,8 +196,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-3-to-prepickup-b2",
-      "name": "BLUE SCORE_3_TO_PREPICKUP_B2",
+      "id": "blue-siete-09-09-score-3-prepickup-b2",
+      "name": "BLUE 09 SCORE 3 -> PREPICKUP B2",
       "endPoint": {
         "x": 34.452,
         "y": 13.465,
@@ -215,11 +215,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-prepickup-b2-to-pickup-b2",
-      "name": "BLUE PREPICKUP_B2_TO_PICKUP_B2",
+      "id": "blue-siete-10-10-prepickup-b2-pickup-b2",
+      "name": "BLUE 10 PREPICKUP B2 -> PICKUP B2",
       "endPoint": {
-        "x": 12.913194,
-        "y": 17.493097,
+        "x": 12.91319354838708,
+        "y": 17.493096774193557,
         "heading": "linear",
         "startDeg": 140,
         "endDeg": 130,
@@ -227,33 +227,8 @@
       },
       "controlPoints": [
         {
-          "x": 9.574839,
-          "y": 11.639774,
-          "locked": false
-        }
-      ],
-      "color": "#ef4444",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "blue-siete-pickup-b2-to-score-4",
-      "name": "BLUE PICKUP_B2_TO_SCORE_4",
-      "endPoint": {
-        "x": 55,
-        "y": 12.5,
-        "heading": "linear",
-        "startDeg": 130,
-        "endDeg": 289,
-        "locked": false
-      },
-      "controlPoints": [
-        {
-          "x": 30.305,
-          "y": 25.131,
+          "x": 9.57483870967746,
+          "y": 11.639774193548401,
           "locked": false
         }
       ],
@@ -265,102 +240,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-4-to-pickup-a3",
-      "name": "BLUE SCORE_4_TO_PICKUP_A3",
-      "endPoint": {
-        "x": 11.169583,
-        "y": 11,
-        "heading": "linear",
-        "startDeg": 289,
-        "endDeg": 270,
-        "locked": false
-      },
-      "controlPoints": [
-        {
-          "x": 3.610598,
-          "y": 28.464704,
-          "locked": false
-        }
-      ],
-      "color": "#10b981",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "blue-siete-pickup-a3-to-score-5",
-      "name": "BLUE PICKUP_A3_TO_SCORE_5",
-      "endPoint": {
-        "x": 55,
-        "y": 12,
-        "heading": "linear",
-        "startDeg": 270,
-        "endDeg": 289,
-        "locked": false
-      },
-      "controlPoints": [
-        {
-          "x": 23.143,
-          "y": 17.619,
-          "locked": false
-        }
-      ],
-      "color": "#eab308",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "blue-siete-score-5-to-prepickup-b3",
-      "name": "BLUE SCORE_5_TO_PREPICKUP_B3",
-      "endPoint": {
-        "x": 34.452,
-        "y": 13.465,
-        "heading": "linear",
-        "startDeg": 289,
-        "endDeg": 140,
-        "locked": false
-      },
-      "controlPoints": [],
-      "color": "#6366f1",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "blue-siete-prepickup-b3-to-pickup-b3",
-      "name": "BLUE PREPICKUP_B3_TO_PICKUP_B3",
-      "endPoint": {
-        "x": 12.913194,
-        "y": 17.493097,
-        "heading": "linear",
-        "startDeg": 140,
-        "endDeg": 130,
-        "locked": false
-      },
-      "controlPoints": [
-        {
-          "x": 9.574839,
-          "y": 11.639774,
-          "locked": false
-        }
-      ],
-      "color": "#0ea5e9",
-      "locked": false,
-      "waitBeforeMs": 0,
-      "waitAfterMs": 0,
-      "waitBeforeName": "",
-      "waitAfterName": ""
-    },
-    {
-      "id": "blue-siete-pickup-b3-to-score-6",
-      "name": "BLUE PICKUP_B3_TO_SCORE_6",
+      "id": "blue-siete-11-11-pickup-b2-score-4",
+      "name": "BLUE 11 PICKUP B2 -> SCORE 4",
       "endPoint": {
         "x": 55,
         "y": 12.5,
@@ -376,6 +257,100 @@
           "locked": false
         }
       ],
+      "color": "#10b981",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "blue-siete-12-12-score-4-pickup-a3",
+      "name": "BLUE 12 SCORE 4 -> PICKUP A3",
+      "endPoint": {
+        "x": 11.16958325106413,
+        "y": 11,
+        "heading": "linear",
+        "startDeg": 289,
+        "endDeg": -90,
+        "locked": false
+      },
+      "controlPoints": [
+        {
+          "x": 3.61059807714497,
+          "y": 28.464703606145186,
+          "locked": false
+        }
+      ],
+      "color": "#eab308",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "blue-siete-13-13-pickup-a3-score-5",
+      "name": "BLUE 13 PICKUP A3 -> SCORE 5",
+      "endPoint": {
+        "x": 55,
+        "y": 12,
+        "heading": "linear",
+        "startDeg": -90,
+        "endDeg": 289,
+        "locked": false
+      },
+      "controlPoints": [
+        {
+          "x": 23.143,
+          "y": 17.619,
+          "locked": false
+        }
+      ],
+      "color": "#6366f1",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "blue-siete-14-14-score-5-prepickup-b3",
+      "name": "BLUE 14 SCORE 5 -> PREPICKUP B3",
+      "endPoint": {
+        "x": 34.452,
+        "y": 13.465,
+        "heading": "linear",
+        "startDeg": 289,
+        "endDeg": 140,
+        "locked": false
+      },
+      "controlPoints": [],
+      "color": "#0ea5e9",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "blue-siete-15-15-prepickup-b3-pickup-b3",
+      "name": "BLUE 15 PREPICKUP B3 -> PICKUP B3",
+      "endPoint": {
+        "x": 14.739,
+        "y": 46.706,
+        "heading": "linear",
+        "startDeg": 140,
+        "endDeg": 130,
+        "locked": false
+      },
+      "controlPoints": [
+        {
+          "x": 9.57483870967746,
+          "y": 11.639774193548401,
+          "locked": false
+        }
+      ],
       "color": "#d946ef",
       "locked": false,
       "waitBeforeMs": 0,
@@ -384,11 +359,36 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-siete-score-6-to-park",
-      "name": "BLUE SCORE_6_TO_PARK",
+      "id": "blue-siete-16-16-pickup-b3-score-6",
+      "name": "BLUE 16 PICKUP B3 -> SCORE 6",
       "endPoint": {
-        "x": 28.417742,
-        "y": 22.675806,
+        "x": 55,
+        "y": 12.5,
+        "heading": "linear",
+        "startDeg": 130,
+        "endDeg": 289,
+        "locked": false
+      },
+      "controlPoints": [
+        {
+          "x": 30.305,
+          "y": 25.131,
+          "locked": false
+        }
+      ],
+      "color": "#65a30d",
+      "locked": false,
+      "waitBeforeMs": 0,
+      "waitAfterMs": 0,
+      "waitBeforeName": "",
+      "waitAfterName": ""
+    },
+    {
+      "id": "blue-siete-17-17-score-6-park",
+      "name": "BLUE 17 SCORE 6 -> PARK",
+      "endPoint": {
+        "x": 28.41774193548387,
+        "y": 22.67580645161289,
         "heading": "linear",
         "startDeg": 289,
         "endDeg": 180,
@@ -396,12 +396,12 @@
       },
       "controlPoints": [
         {
-          "x": 45.982258,
-          "y": 24.529032,
+          "x": 45.98225806451616,
+          "y": 24.5290322580645,
           "locked": false
         }
       ],
-      "color": "#65a30d",
+      "color": "#fb7185",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -495,348 +495,348 @@
   "sequence": [
     {
       "kind": "path",
-      "lineId": "blue-siete-preload-to-score"
+      "lineId": "blue-siete-01-01-preload-score"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-preload-to-score-settle",
-      "name": "BLUE chassis settle",
-      "durationMs": 300,
+      "id": "blue-siete-wait-01-01-preload-settle",
+      "name": "BLUE 01 PRELOAD SETTLE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-preload-to-score-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-02-01-fire-preload",
+      "name": "BLUE 01 FIRE PRELOAD",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-to-pickup-a1"
+      "lineId": "blue-siete-02-02-score-pickup-a1"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-score-to-pickup-a1-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-03-02-pickup-a1-dwell",
+      "name": "BLUE 02 PICKUP A1 DWELL",
+      "durationMs": 90,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-a1-to-score-1"
+      "lineId": "blue-siete-03-03-pickup-a1-score-1"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a1-to-score-1-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-04-03-a1-score-settle",
+      "name": "BLUE 03 A1 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a1-to-score-1-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-05-03-fire-score-1",
+      "name": "BLUE 03 FIRE SCORE 1",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-1-to-prepickup-b1"
+      "lineId": "blue-siete-04-04-score-1-prepickup-b1"
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-prepickup-b1-to-pickup-b1"
+      "lineId": "blue-siete-05-05-prepickup-b1-pickup-b1"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-prepickup-b1-to-pickup-b1-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-06-05-pickup-b1-dwell",
+      "name": "BLUE 05 PICKUP B1 DWELL",
+      "durationMs": 250,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-b1-to-score-2"
+      "lineId": "blue-siete-06-06-pickup-b1-score-2"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b1-to-score-2-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-07-06-b1-score-settle",
+      "name": "BLUE 06 B1 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b1-to-score-2-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-08-06-fire-score-2",
+      "name": "BLUE 06 FIRE SCORE 2",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-2-to-pickup-a2"
+      "lineId": "blue-siete-07-07-score-2-pickup-a2"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-score-2-to-pickup-a2-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-09-07-pickup-a2-dwell",
+      "name": "BLUE 07 PICKUP A2 DWELL",
+      "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-a2-to-score-3"
+      "lineId": "blue-siete-08-08-pickup-a2-score-3"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a2-to-score-3-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-10-08-a2-score-settle",
+      "name": "BLUE 08 A2 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a2-to-score-3-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-11-08-fire-score-3",
+      "name": "BLUE 08 FIRE SCORE 3",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-3-to-prepickup-b2"
+      "lineId": "blue-siete-09-09-score-3-prepickup-b2"
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-prepickup-b2-to-pickup-b2"
+      "lineId": "blue-siete-10-10-prepickup-b2-pickup-b2"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-prepickup-b2-to-pickup-b2-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-12-10-pickup-b2-dwell",
+      "name": "BLUE 10 PICKUP B2 DWELL",
+      "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-b2-to-score-4"
+      "lineId": "blue-siete-11-11-pickup-b2-score-4"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b2-to-score-4-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-13-11-b2-score-settle",
+      "name": "BLUE 11 B2 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b2-to-score-4-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-14-11-fire-score-4",
+      "name": "BLUE 11 FIRE SCORE 4",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-4-to-pickup-a3"
+      "lineId": "blue-siete-12-12-score-4-pickup-a3"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-score-4-to-pickup-a3-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-15-12-pickup-a3-dwell",
+      "name": "BLUE 12 PICKUP A3 DWELL",
+      "durationMs": 150,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-a3-to-score-5"
+      "lineId": "blue-siete-13-13-pickup-a3-score-5"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a3-to-score-5-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-16-13-a3-score-settle",
+      "name": "BLUE 13 A3 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-a3-to-score-5-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-17-13-fire-score-5",
+      "name": "BLUE 13 FIRE SCORE 5",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-5-to-prepickup-b3"
+      "lineId": "blue-siete-14-14-score-5-prepickup-b3"
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-prepickup-b3-to-pickup-b3"
+      "lineId": "blue-siete-15-15-prepickup-b3-pickup-b3"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-prepickup-b3-to-pickup-b3-collect",
-      "name": "BLUE pickup dwell",
-      "durationMs": 300,
+      "id": "blue-siete-wait-18-15-pickup-b3-dwell",
+      "name": "BLUE 15 PICKUP B3 DWELL",
+      "durationMs": 200,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-pickup-b3-to-score-6"
+      "lineId": "blue-siete-16-16-pickup-b3-score-6"
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b3-to-score-6-settle",
-      "name": "BLUE chassis settle",
+      "id": "blue-siete-wait-19-16-b3-score-settle",
+      "name": "BLUE 16 B3 SCORE SETTLE",
       "durationMs": 300,
       "locked": false
     },
     {
       "kind": "wait",
-      "id": "blue-siete-pickup-b3-to-score-6-shoot",
-      "name": "BLUE rear shoot",
+      "id": "blue-siete-wait-20-16-fire-score-6",
+      "name": "BLUE 16 FIRE SCORE 6",
       "durationMs": 400,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "blue-siete-score-6-to-park"
+      "lineId": "blue-siete-17-17-score-6-park"
     }
   ],
   "pathChains": [
     {
-      "id": "blue-siete-preload-to-score-chain",
-      "name": "BLUE PRELOAD_TO_SCORE",
+      "id": "blue-siete-01-01-preload-score-chain",
+      "name": "BLUE 01 PRELOAD -> SCORE",
       "color": "#facc15",
       "lineIds": [
-        "blue-siete-preload-to-score"
+        "blue-siete-01-01-preload-score"
       ]
     },
     {
-      "id": "blue-siete-score-to-pickup-a1-chain",
-      "name": "BLUE SCORE_TO_PICKUP_A1",
+      "id": "blue-siete-02-02-score-pickup-a1-chain",
+      "name": "BLUE 02 SCORE -> PICKUP A1",
       "color": "#22c55e",
       "lineIds": [
-        "blue-siete-score-to-pickup-a1"
+        "blue-siete-02-02-score-pickup-a1"
       ]
     },
     {
-      "id": "blue-siete-pickup-a1-to-score-1-chain",
-      "name": "BLUE PICKUP_A1_TO_SCORE_1",
+      "id": "blue-siete-03-03-pickup-a1-score-1-chain",
+      "name": "BLUE 03 PICKUP A1 -> SCORE 1",
       "color": "#3b82f6",
       "lineIds": [
-        "blue-siete-pickup-a1-to-score-1"
+        "blue-siete-03-03-pickup-a1-score-1"
       ]
     },
     {
-      "id": "blue-siete-score-1-to-prepickup-b1-chain",
-      "name": "BLUE SCORE_1_TO_PREPICKUP_B1",
+      "id": "blue-siete-04-04-score-1-prepickup-b1-chain",
+      "name": "BLUE 04 SCORE 1 -> PREPICKUP B1",
       "color": "#f97316",
       "lineIds": [
-        "blue-siete-score-1-to-prepickup-b1"
+        "blue-siete-04-04-score-1-prepickup-b1"
       ]
     },
     {
-      "id": "blue-siete-prepickup-b1-to-pickup-b1-chain",
-      "name": "BLUE PREPICKUP_B1_TO_PICKUP_B1",
+      "id": "blue-siete-05-05-prepickup-b1-pickup-b1-chain",
+      "name": "BLUE 05 PREPICKUP B1 -> PICKUP B1",
       "color": "#a855f7",
       "lineIds": [
-        "blue-siete-prepickup-b1-to-pickup-b1"
+        "blue-siete-05-05-prepickup-b1-pickup-b1"
       ]
     },
     {
-      "id": "blue-siete-pickup-b1-to-score-2-chain",
-      "name": "BLUE PICKUP_B1_TO_SCORE_2",
+      "id": "blue-siete-06-06-pickup-b1-score-2-chain",
+      "name": "BLUE 06 PICKUP B1 -> SCORE 2",
       "color": "#14b8a6",
       "lineIds": [
-        "blue-siete-pickup-b1-to-score-2"
+        "blue-siete-06-06-pickup-b1-score-2"
       ]
     },
     {
-      "id": "blue-siete-score-2-to-pickup-a2-chain",
-      "name": "BLUE SCORE_2_TO_PICKUP_A2",
-      "color": "#ec4899",
-      "lineIds": [
-        "blue-siete-score-2-to-pickup-a2"
-      ]
-    },
-    {
-      "id": "blue-siete-pickup-a2-to-score-3-chain",
-      "name": "BLUE PICKUP_A2_TO_SCORE_3",
-      "color": "#84cc16",
-      "lineIds": [
-        "blue-siete-pickup-a2-to-score-3"
-      ]
-    },
-    {
-      "id": "blue-siete-score-3-to-prepickup-b2-chain",
-      "name": "BLUE SCORE_3_TO_PREPICKUP_B2",
-      "color": "#06b6d4",
-      "lineIds": [
-        "blue-siete-score-3-to-prepickup-b2"
-      ]
-    },
-    {
-      "id": "blue-siete-prepickup-b2-to-pickup-b2-chain",
-      "name": "BLUE PREPICKUP_B2_TO_PICKUP_B2",
+      "id": "blue-siete-07-07-score-2-pickup-a2-chain",
+      "name": "BLUE 07 SCORE 2 -> PICKUP A2",
       "color": "#ef4444",
       "lineIds": [
-        "blue-siete-prepickup-b2-to-pickup-b2"
+        "blue-siete-07-07-score-2-pickup-a2"
       ]
     },
     {
-      "id": "blue-siete-pickup-b2-to-score-4-chain",
-      "name": "BLUE PICKUP_B2_TO_SCORE_4",
+      "id": "blue-siete-08-08-pickup-a2-score-3-chain",
+      "name": "BLUE 08 PICKUP A2 -> SCORE 3",
+      "color": "#84cc16",
+      "lineIds": [
+        "blue-siete-08-08-pickup-a2-score-3"
+      ]
+    },
+    {
+      "id": "blue-siete-09-09-score-3-prepickup-b2-chain",
+      "name": "BLUE 09 SCORE 3 -> PREPICKUP B2",
+      "color": "#06b6d4",
+      "lineIds": [
+        "blue-siete-09-09-score-3-prepickup-b2"
+      ]
+    },
+    {
+      "id": "blue-siete-10-10-prepickup-b2-pickup-b2-chain",
+      "name": "BLUE 10 PREPICKUP B2 -> PICKUP B2",
       "color": "#8b5cf6",
       "lineIds": [
-        "blue-siete-pickup-b2-to-score-4"
+        "blue-siete-10-10-prepickup-b2-pickup-b2"
       ]
     },
     {
-      "id": "blue-siete-score-4-to-pickup-a3-chain",
-      "name": "BLUE SCORE_4_TO_PICKUP_A3",
+      "id": "blue-siete-11-11-pickup-b2-score-4-chain",
+      "name": "BLUE 11 PICKUP B2 -> SCORE 4",
       "color": "#10b981",
       "lineIds": [
-        "blue-siete-score-4-to-pickup-a3"
+        "blue-siete-11-11-pickup-b2-score-4"
       ]
     },
     {
-      "id": "blue-siete-pickup-a3-to-score-5-chain",
-      "name": "BLUE PICKUP_A3_TO_SCORE_5",
+      "id": "blue-siete-12-12-score-4-pickup-a3-chain",
+      "name": "BLUE 12 SCORE 4 -> PICKUP A3",
       "color": "#eab308",
       "lineIds": [
-        "blue-siete-pickup-a3-to-score-5"
+        "blue-siete-12-12-score-4-pickup-a3"
       ]
     },
     {
-      "id": "blue-siete-score-5-to-prepickup-b3-chain",
-      "name": "BLUE SCORE_5_TO_PREPICKUP_B3",
+      "id": "blue-siete-13-13-pickup-a3-score-5-chain",
+      "name": "BLUE 13 PICKUP A3 -> SCORE 5",
       "color": "#6366f1",
       "lineIds": [
-        "blue-siete-score-5-to-prepickup-b3"
+        "blue-siete-13-13-pickup-a3-score-5"
       ]
     },
     {
-      "id": "blue-siete-prepickup-b3-to-pickup-b3-chain",
-      "name": "BLUE PREPICKUP_B3_TO_PICKUP_B3",
+      "id": "blue-siete-14-14-score-5-prepickup-b3-chain",
+      "name": "BLUE 14 SCORE 5 -> PREPICKUP B3",
       "color": "#0ea5e9",
       "lineIds": [
-        "blue-siete-prepickup-b3-to-pickup-b3"
+        "blue-siete-14-14-score-5-prepickup-b3"
       ]
     },
     {
-      "id": "blue-siete-pickup-b3-to-score-6-chain",
-      "name": "BLUE PICKUP_B3_TO_SCORE_6",
+      "id": "blue-siete-15-15-prepickup-b3-pickup-b3-chain",
+      "name": "BLUE 15 PREPICKUP B3 -> PICKUP B3",
       "color": "#d946ef",
       "lineIds": [
-        "blue-siete-pickup-b3-to-score-6"
+        "blue-siete-15-15-prepickup-b3-pickup-b3"
       ]
     },
     {
-      "id": "blue-siete-score-6-to-park-chain",
-      "name": "BLUE SCORE_6_TO_PARK",
+      "id": "blue-siete-16-16-pickup-b3-score-6-chain",
+      "name": "BLUE 16 PICKUP B3 -> SCORE 6",
       "color": "#65a30d",
       "lineIds": [
-        "blue-siete-score-6-to-park"
+        "blue-siete-16-16-pickup-b3-score-6"
+      ]
+    },
+    {
+      "id": "blue-siete-17-17-score-6-park-chain",
+      "name": "BLUE 17 SCORE 6 -> PARK",
+      "color": "#fb7185",
+      "lineIds": [
+        "blue-siete-17-17-score-6-park"
       ]
     }
   ]

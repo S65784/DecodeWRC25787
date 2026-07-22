@@ -11,11 +11,11 @@
       "id": "blue-cinco-01-01-start-preload-score",
       "name": "BLUE 01 START -> PRELOAD SCORE",
       "endPoint": {
-        "x": 44,
-        "y": 99.8,
+        "x": 52.2,
+        "y": 89.8,
         "heading": "linear",
         "startDeg": 315.2839,
-        "endDeg": 322,
+        "endDeg": -53.841815,
         "locked": false
       },
       "controlPoints": [],
@@ -27,23 +27,17 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-02-02-score-pickup-1-ready",
-      "name": "BLUE 02 SCORE -> PICKUP 1 READY",
+      "id": "blue-cinco-02-02-score-row-1-ready",
+      "name": "BLUE 02 SCORE -> ROW 1 READY",
       "endPoint": {
-        "x": 45,
-        "y": 81.4,
+        "x": 54,
+        "y": 83,
         "heading": "linear",
-        "startDeg": 322,
+        "startDeg": -53.841815,
         "endDeg": 180,
         "locked": false
       },
-      "controlPoints": [
-        {
-          "x": 50.05535966149506,
-          "y": 96.27080394922427,
-          "locked": false
-        }
-      ],
+      "controlPoints": [],
       "color": "#22c55e",
       "locked": false,
       "waitBeforeMs": 0,
@@ -52,11 +46,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-03-03-collect-1",
-      "name": "BLUE 03 COLLECT 1",
+      "id": "blue-cinco-03-03-collect-row-1",
+      "name": "BLUE 03 COLLECT ROW 1",
       "endPoint": {
-        "x": 15.1,
-        "y": 81.4,
+        "x": 19,
+        "y": 83,
         "heading": "linear",
         "startDeg": 180,
         "endDeg": 180,
@@ -74,7 +68,7 @@
       "id": "blue-cinco-04-04-push-gate-1",
       "name": "BLUE 04 PUSH GATE 1",
       "endPoint": {
-        "x": 11.5,
+        "x": 18,
         "y": 72,
         "heading": "linear",
         "startDeg": 180,
@@ -96,23 +90,17 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-05-05-gate-1-score-1",
-      "name": "BLUE 05 GATE 1 -> SCORE 1",
+      "id": "blue-cinco-05-05-gate-1-row-1-score",
+      "name": "BLUE 05 GATE 1 -> ROW 1 SCORE",
       "endPoint": {
-        "x": 44,
-        "y": 99.8,
+        "x": 60,
+        "y": 83,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 322.8,
+        "endDeg": -47.726311,
         "locked": false
       },
-      "controlPoints": [
-        {
-          "x": 29.25301204819277,
-          "y": 81.92771084337349,
-          "locked": false
-        }
-      ],
+      "controlPoints": [],
       "color": "#a855f7",
       "locked": false,
       "waitBeforeMs": 0,
@@ -121,20 +109,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-06-06-score-1-pickup-2-ready",
-      "name": "BLUE 06 SCORE 1 -> PICKUP 2 READY",
+      "id": "blue-cinco-06-06-score-row-2-ready",
+      "name": "BLUE 06 SCORE -> ROW 2 READY",
       "endPoint": {
-        "x": 45,
-        "y": 58.9,
+        "x": 58.18709677419355,
+        "y": 59,
         "heading": "linear",
-        "startDeg": 322.8,
+        "startDeg": -47.726311,
         "endDeg": 180,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 58.24097984598117,
-          "y": 70.10588235294118,
+          "x": 56.31770967741934,
+          "y": 72.26816129032255,
           "locked": false
         }
       ],
@@ -146,11 +134,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-07-07-collect-2",
-      "name": "BLUE 07 COLLECT 2",
+      "id": "blue-cinco-07-07-collect-row-2",
+      "name": "BLUE 07 COLLECT ROW 2",
       "endPoint": {
-        "x": 15,
-        "y": 58.9,
+        "x": 13,
+        "y": 59,
         "heading": "linear",
         "startDeg": 180,
         "endDeg": 180,
@@ -168,7 +156,7 @@
       "id": "blue-cinco-08-08-push-gate-2",
       "name": "BLUE 08 PUSH GATE 2",
       "endPoint": {
-        "x": 11.5,
+        "x": 18.5,
         "y": 72,
         "heading": "linear",
         "startDeg": 180,
@@ -190,20 +178,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-09-09-gate-2-score-2",
-      "name": "BLUE 09 GATE 2 -> SCORE 2",
+      "id": "blue-cinco-09-09-gate-2-row-2-score",
+      "name": "BLUE 09 GATE 2 -> ROW 2 SCORE",
       "endPoint": {
-        "x": 44,
-        "y": 99.8,
+        "x": 60,
+        "y": 83,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 323.5,
+        "endDeg": -47.726311,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 40,
-          "y": 60.3,
+          "x": 45,
+          "y": 60,
           "locked": false
         }
       ],
@@ -215,20 +203,20 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-10-10-score-2-pickup-3-ready",
-      "name": "BLUE 10 SCORE 2 -> PICKUP 3 READY",
+      "id": "blue-cinco-10-10-score-row-3-ready",
+      "name": "BLUE 10 SCORE -> ROW 3 READY",
       "endPoint": {
-        "x": 45,
-        "y": 33.9,
+        "x": 56.5,
+        "y": 36,
         "heading": "linear",
-        "startDeg": 323.5,
+        "startDeg": -47.726311,
         "endDeg": 180,
         "locked": false
       },
       "controlPoints": [
         {
-          "x": 54.41176470588236,
-          "y": 67.45882352941175,
+          "x": 57.16209677419354,
+          "y": 42.416129032258056,
           "locked": false
         }
       ],
@@ -240,11 +228,11 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-11-11-collect-3",
-      "name": "BLUE 11 COLLECT 3",
+      "id": "blue-cinco-11-11-collect-row-3",
+      "name": "BLUE 11 COLLECT ROW 3",
       "endPoint": {
-        "x": 12.7,
-        "y": 33.9,
+        "x": 12,
+        "y": 36,
         "heading": "linear",
         "startDeg": 180,
         "endDeg": 180,
@@ -259,23 +247,17 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-12-12-pickup-3-score-3",
-      "name": "BLUE 12 PICKUP 3 -> SCORE 3",
+      "id": "blue-cinco-12-12-row-3-final-score",
+      "name": "BLUE 12 ROW 3 -> FINAL SCORE",
       "endPoint": {
-        "x": 44,
-        "y": 99.8,
+        "x": 59.923,
+        "y": 107.923,
         "heading": "linear",
         "startDeg": 180,
-        "endDeg": 325,
+        "endDeg": -31.06761,
         "locked": false
       },
-      "controlPoints": [
-        {
-          "x": 42,
-          "y": 39,
-          "locked": false
-        }
-      ],
+      "controlPoints": [],
       "color": "#eab308",
       "locked": false,
       "waitBeforeMs": 0,
@@ -284,13 +266,13 @@
       "waitAfterName": ""
     },
     {
-      "id": "blue-cinco-13-13-score-3-park",
-      "name": "BLUE 13 SCORE 3 -> PARK",
+      "id": "blue-cinco-13-13-final-score-park",
+      "name": "BLUE 13 FINAL SCORE -> PARK",
       "endPoint": {
-        "x": 45,
-        "y": 108,
+        "x": 58,
+        "y": 108.9,
         "heading": "linear",
-        "startDeg": 325,
+        "startDeg": -31.06761,
         "endDeg": 180,
         "locked": false
       },
@@ -400,11 +382,11 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-02-02-score-pickup-1-ready"
+      "lineId": "blue-cinco-02-02-score-row-1-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-03-03-collect-1"
+      "lineId": "blue-cinco-03-03-collect-row-1"
     },
     {
       "kind": "path",
@@ -412,7 +394,7 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-05-05-gate-1-score-1"
+      "lineId": "blue-cinco-05-05-gate-1-row-1-score"
     },
     {
       "kind": "wait",
@@ -423,11 +405,11 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-06-06-score-1-pickup-2-ready"
+      "lineId": "blue-cinco-06-06-score-row-2-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-07-07-collect-2"
+      "lineId": "blue-cinco-07-07-collect-row-2"
     },
     {
       "kind": "path",
@@ -435,7 +417,7 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-09-09-gate-2-score-2"
+      "lineId": "blue-cinco-09-09-gate-2-row-2-score"
     },
     {
       "kind": "wait",
@@ -446,15 +428,15 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-10-10-score-2-pickup-3-ready"
+      "lineId": "blue-cinco-10-10-score-row-3-ready"
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-11-11-collect-3"
+      "lineId": "blue-cinco-11-11-collect-row-3"
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-12-12-pickup-3-score-3"
+      "lineId": "blue-cinco-12-12-row-3-final-score"
     },
     {
       "kind": "wait",
@@ -465,7 +447,7 @@
     },
     {
       "kind": "path",
-      "lineId": "blue-cinco-13-13-score-3-park"
+      "lineId": "blue-cinco-13-13-final-score-park"
     }
   ],
   "pathChains": [
@@ -478,19 +460,19 @@
       ]
     },
     {
-      "id": "blue-cinco-02-02-score-pickup-1-ready-chain",
-      "name": "BLUE 02 SCORE -> PICKUP 1 READY",
+      "id": "blue-cinco-02-02-score-row-1-ready-chain",
+      "name": "BLUE 02 SCORE -> ROW 1 READY",
       "color": "#22c55e",
       "lineIds": [
-        "blue-cinco-02-02-score-pickup-1-ready"
+        "blue-cinco-02-02-score-row-1-ready"
       ]
     },
     {
-      "id": "blue-cinco-03-03-collect-1-chain",
-      "name": "BLUE 03 COLLECT 1",
+      "id": "blue-cinco-03-03-collect-row-1-chain",
+      "name": "BLUE 03 COLLECT ROW 1",
       "color": "#3b82f6",
       "lineIds": [
-        "blue-cinco-03-03-collect-1"
+        "blue-cinco-03-03-collect-row-1"
       ]
     },
     {
@@ -502,27 +484,27 @@
       ]
     },
     {
-      "id": "blue-cinco-05-05-gate-1-score-1-chain",
-      "name": "BLUE 05 GATE 1 -> SCORE 1",
+      "id": "blue-cinco-05-05-gate-1-row-1-score-chain",
+      "name": "BLUE 05 GATE 1 -> ROW 1 SCORE",
       "color": "#a855f7",
       "lineIds": [
-        "blue-cinco-05-05-gate-1-score-1"
+        "blue-cinco-05-05-gate-1-row-1-score"
       ]
     },
     {
-      "id": "blue-cinco-06-06-score-1-pickup-2-ready-chain",
-      "name": "BLUE 06 SCORE 1 -> PICKUP 2 READY",
+      "id": "blue-cinco-06-06-score-row-2-ready-chain",
+      "name": "BLUE 06 SCORE -> ROW 2 READY",
       "color": "#14b8a6",
       "lineIds": [
-        "blue-cinco-06-06-score-1-pickup-2-ready"
+        "blue-cinco-06-06-score-row-2-ready"
       ]
     },
     {
-      "id": "blue-cinco-07-07-collect-2-chain",
-      "name": "BLUE 07 COLLECT 2",
+      "id": "blue-cinco-07-07-collect-row-2-chain",
+      "name": "BLUE 07 COLLECT ROW 2",
       "color": "#ef4444",
       "lineIds": [
-        "blue-cinco-07-07-collect-2"
+        "blue-cinco-07-07-collect-row-2"
       ]
     },
     {
@@ -534,43 +516,43 @@
       ]
     },
     {
-      "id": "blue-cinco-09-09-gate-2-score-2-chain",
-      "name": "BLUE 09 GATE 2 -> SCORE 2",
+      "id": "blue-cinco-09-09-gate-2-row-2-score-chain",
+      "name": "BLUE 09 GATE 2 -> ROW 2 SCORE",
       "color": "#06b6d4",
       "lineIds": [
-        "blue-cinco-09-09-gate-2-score-2"
+        "blue-cinco-09-09-gate-2-row-2-score"
       ]
     },
     {
-      "id": "blue-cinco-10-10-score-2-pickup-3-ready-chain",
-      "name": "BLUE 10 SCORE 2 -> PICKUP 3 READY",
+      "id": "blue-cinco-10-10-score-row-3-ready-chain",
+      "name": "BLUE 10 SCORE -> ROW 3 READY",
       "color": "#8b5cf6",
       "lineIds": [
-        "blue-cinco-10-10-score-2-pickup-3-ready"
+        "blue-cinco-10-10-score-row-3-ready"
       ]
     },
     {
-      "id": "blue-cinco-11-11-collect-3-chain",
-      "name": "BLUE 11 COLLECT 3",
+      "id": "blue-cinco-11-11-collect-row-3-chain",
+      "name": "BLUE 11 COLLECT ROW 3",
       "color": "#10b981",
       "lineIds": [
-        "blue-cinco-11-11-collect-3"
+        "blue-cinco-11-11-collect-row-3"
       ]
     },
     {
-      "id": "blue-cinco-12-12-pickup-3-score-3-chain",
-      "name": "BLUE 12 PICKUP 3 -> SCORE 3",
+      "id": "blue-cinco-12-12-row-3-final-score-chain",
+      "name": "BLUE 12 ROW 3 -> FINAL SCORE",
       "color": "#eab308",
       "lineIds": [
-        "blue-cinco-12-12-pickup-3-score-3"
+        "blue-cinco-12-12-row-3-final-score"
       ]
     },
     {
-      "id": "blue-cinco-13-13-score-3-park-chain",
-      "name": "BLUE 13 SCORE 3 -> PARK",
+      "id": "blue-cinco-13-13-final-score-park-chain",
+      "name": "BLUE 13 FINAL SCORE -> PARK",
       "color": "#6366f1",
       "lineIds": [
-        "blue-cinco-13-13-score-3-park"
+        "blue-cinco-13-13-final-score-park"
       ]
     }
   ]

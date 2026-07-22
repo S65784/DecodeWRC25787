@@ -3,18 +3,18 @@
     "x": 123.457,
     "y": 122.478,
     "heading": "constant",
-    "degrees": 224.7161,
+    "degrees": -135.2839,
     "locked": false
   },
   "lines": [
     {
-      "id": "red-cero-01",
-      "name": "RED 01 START -> PRELOAD REAR SCORE",
+      "id": "red-cero-01-01-start-preload-score",
+      "name": "RED 01 START -> PRELOAD SCORE",
       "endPoint": {
         "x": 91.8,
         "y": 89.8,
         "heading": "linear",
-        "startDeg": 224.7161,
+        "startDeg": -135.2839,
         "endDeg": 233.841815,
         "locked": false
       },
@@ -27,10 +27,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-02",
+      "id": "red-cero-02-02-score-row-2-ready",
       "name": "RED 02 SCORE -> ROW 2 READY",
       "endPoint": {
-        "x": 85.812903,
+        "x": 85.81290322580645,
         "y": 59,
         "heading": "linear",
         "startDeg": 233.841815,
@@ -39,8 +39,8 @@
       },
       "controlPoints": [
         {
-          "x": 87.68229,
-          "y": 72.268161,
+          "x": 87.68229032258066,
+          "y": 72.26816129032255,
           "locked": false
         }
       ],
@@ -52,7 +52,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-03",
+      "id": "red-cero-03-03-collect-row-2",
       "name": "RED 03 COLLECT ROW 2",
       "endPoint": {
         "x": 131,
@@ -71,8 +71,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-04",
-      "name": "RED 04 ROW 2 -> REAR SCORE",
+      "id": "red-cero-04-04-row-2-score",
+      "name": "RED 04 ROW 2 -> SCORE",
       "endPoint": {
         "x": 84,
         "y": 83,
@@ -96,10 +96,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-05",
+      "id": "red-cero-05-05-score-row-1-ready",
       "name": "RED 05 SCORE -> ROW 1 READY",
       "endPoint": {
-        "x": 99,
+        "x": 90,
         "y": 83,
         "heading": "linear",
         "startDeg": 227.726311,
@@ -115,7 +115,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-06",
+      "id": "red-cero-06-06-collect-row-1",
       "name": "RED 06 COLLECT ROW 1",
       "endPoint": {
         "x": 125,
@@ -134,8 +134,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-07",
-      "name": "RED 07 ROW 1 -> REAR SCORE",
+      "id": "red-cero-07-07-row-1-score",
+      "name": "RED 07 ROW 1 -> SCORE",
       "endPoint": {
         "x": 84,
         "y": 83,
@@ -145,7 +145,7 @@
         "locked": false
       },
       "controlPoints": [],
-      "color": "#ec4899",
+      "color": "#ef4444",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -153,10 +153,10 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-08",
+      "id": "red-cero-08-08-score-row-3-ready",
       "name": "RED 08 SCORE -> ROW 3 READY",
       "endPoint": {
-        "x": 83.501613,
+        "x": 89,
         "y": 36,
         "heading": "linear",
         "startDeg": 227.726311,
@@ -165,8 +165,8 @@
       },
       "controlPoints": [
         {
-          "x": 86.837903,
-          "y": 42.416129,
+          "x": 89,
+          "y": 42.416129032258056,
           "locked": false
         }
       ],
@@ -178,7 +178,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-09",
+      "id": "red-cero-09-09-collect-row-3",
       "name": "RED 09 COLLECT ROW 3",
       "endPoint": {
         "x": 132,
@@ -197,8 +197,8 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-10",
-      "name": "RED 10 ROW 3 -> FINAL REAR SCORE",
+      "id": "red-cero-10-10-row-3-final-score",
+      "name": "RED 10 ROW 3 -> FINAL SCORE",
       "endPoint": {
         "x": 84.077,
         "y": 107.923,
@@ -208,7 +208,7 @@
         "locked": false
       },
       "controlPoints": [],
-      "color": "#ef4444",
+      "color": "#8b5cf6",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -216,7 +216,7 @@
       "waitAfterName": ""
     },
     {
-      "id": "red-cero-11",
+      "id": "red-cero-11-11-final-score-park",
       "name": "RED 11 FINAL SCORE -> PARK",
       "endPoint": {
         "x": 86,
@@ -227,7 +227,7 @@
         "locked": false
       },
       "controlPoints": [],
-      "color": "#8b5cf6",
+      "color": "#10b981",
       "locked": false,
       "waitBeforeMs": 0,
       "waitAfterMs": 0,
@@ -321,94 +321,164 @@
   "sequence": [
     {
       "kind": "path",
-      "lineId": "red-cero-01"
+      "lineId": "red-cero-01-01-start-preload-score"
     },
     {
       "kind": "wait",
-      "id": "red-cero-01-shoot",
-      "name": "RED rear shoot",
-      "durationMs": 925,
+      "id": "red-cero-wait-01-01-fire",
+      "name": "RED 01 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-cero-02"
+      "lineId": "red-cero-02-02-score-row-2-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-03"
+      "lineId": "red-cero-03-03-collect-row-2"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-04"
+      "lineId": "red-cero-04-04-row-2-score"
     },
     {
       "kind": "wait",
-      "id": "red-cero-04-shoot",
-      "name": "RED rear shoot",
-      "durationMs": 925,
+      "id": "red-cero-wait-02-04-fire",
+      "name": "RED 04 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-cero-05"
+      "lineId": "red-cero-05-05-score-row-1-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-06"
+      "lineId": "red-cero-06-06-collect-row-1"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-07"
+      "lineId": "red-cero-07-07-row-1-score"
     },
     {
       "kind": "wait",
-      "id": "red-cero-07-shoot",
-      "name": "RED rear shoot",
-      "durationMs": 925,
+      "id": "red-cero-wait-03-07-fire",
+      "name": "RED 07 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-cero-08"
+      "lineId": "red-cero-08-08-score-row-3-ready"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-09"
+      "lineId": "red-cero-09-09-collect-row-3"
     },
     {
       "kind": "path",
-      "lineId": "red-cero-10"
+      "lineId": "red-cero-10-10-row-3-final-score"
     },
     {
       "kind": "wait",
-      "id": "red-cero-10-shoot",
-      "name": "RED rear shoot",
-      "durationMs": 925,
+      "id": "red-cero-wait-04-10-fire",
+      "name": "RED 10 FIRE",
+      "durationMs": 350,
       "locked": false
     },
     {
       "kind": "path",
-      "lineId": "red-cero-11"
+      "lineId": "red-cero-11-11-final-score-park"
     }
   ],
   "pathChains": [
     {
-      "id": "red-auto-cero",
-      "name": "RED AutoCero Close Zero Door Rear Shooter",
-      "color": "#dc2626",
+      "id": "red-cero-01-01-start-preload-score-chain",
+      "name": "RED 01 START -> PRELOAD SCORE",
+      "color": "#facc15",
       "lineIds": [
-        "red-cero-01",
-        "red-cero-02",
-        "red-cero-03",
-        "red-cero-04",
-        "red-cero-05",
-        "red-cero-06",
-        "red-cero-07",
-        "red-cero-08",
-        "red-cero-09",
-        "red-cero-10",
-        "red-cero-11"
+        "red-cero-01-01-start-preload-score"
+      ]
+    },
+    {
+      "id": "red-cero-02-02-score-row-2-ready-chain",
+      "name": "RED 02 SCORE -> ROW 2 READY",
+      "color": "#22c55e",
+      "lineIds": [
+        "red-cero-02-02-score-row-2-ready"
+      ]
+    },
+    {
+      "id": "red-cero-03-03-collect-row-2-chain",
+      "name": "RED 03 COLLECT ROW 2",
+      "color": "#3b82f6",
+      "lineIds": [
+        "red-cero-03-03-collect-row-2"
+      ]
+    },
+    {
+      "id": "red-cero-04-04-row-2-score-chain",
+      "name": "RED 04 ROW 2 -> SCORE",
+      "color": "#f97316",
+      "lineIds": [
+        "red-cero-04-04-row-2-score"
+      ]
+    },
+    {
+      "id": "red-cero-05-05-score-row-1-ready-chain",
+      "name": "RED 05 SCORE -> ROW 1 READY",
+      "color": "#a855f7",
+      "lineIds": [
+        "red-cero-05-05-score-row-1-ready"
+      ]
+    },
+    {
+      "id": "red-cero-06-06-collect-row-1-chain",
+      "name": "RED 06 COLLECT ROW 1",
+      "color": "#14b8a6",
+      "lineIds": [
+        "red-cero-06-06-collect-row-1"
+      ]
+    },
+    {
+      "id": "red-cero-07-07-row-1-score-chain",
+      "name": "RED 07 ROW 1 -> SCORE",
+      "color": "#ef4444",
+      "lineIds": [
+        "red-cero-07-07-row-1-score"
+      ]
+    },
+    {
+      "id": "red-cero-08-08-score-row-3-ready-chain",
+      "name": "RED 08 SCORE -> ROW 3 READY",
+      "color": "#84cc16",
+      "lineIds": [
+        "red-cero-08-08-score-row-3-ready"
+      ]
+    },
+    {
+      "id": "red-cero-09-09-collect-row-3-chain",
+      "name": "RED 09 COLLECT ROW 3",
+      "color": "#06b6d4",
+      "lineIds": [
+        "red-cero-09-09-collect-row-3"
+      ]
+    },
+    {
+      "id": "red-cero-10-10-row-3-final-score-chain",
+      "name": "RED 10 ROW 3 -> FINAL SCORE",
+      "color": "#8b5cf6",
+      "lineIds": [
+        "red-cero-10-10-row-3-final-score"
+      ]
+    },
+    {
+      "id": "red-cero-11-11-final-score-park-chain",
+      "name": "RED 11 FINAL SCORE -> PARK",
+      "color": "#10b981",
+      "lineIds": [
+        "red-cero-11-11-final-score-park"
       ]
     }
   ]
