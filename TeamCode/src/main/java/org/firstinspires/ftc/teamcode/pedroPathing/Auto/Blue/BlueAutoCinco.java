@@ -26,7 +26,7 @@ public final class BlueAutoCinco extends PathStateAutoBase {
     // Row 1 (y = 83) runs first.
     private final Pose p02RowOneReady = pose(54, 83.000, 180);
     private final Pose p03RowOnePickup = pose(19, 83.000, 180);
-
+    //25787
     // Gate 1 coordinates remain unchanged.
     private final Pose c04GateOne = pose(39.06772908366534, 69.4183266932271, -90);//114.93227091633466
     private final Pose p04GateOne  = pose(18, 72, 180);
