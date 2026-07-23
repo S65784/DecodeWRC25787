@@ -21,22 +21,22 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private final Pose preloadScorePose = pose(89.000, 12.000, -106);
     private static final long PRELOAD_CHASSIS_SETTLE_MS = 400;
 
-    private final Pose pickupA1Pose = pose(132.174, 8.174, 0);
-    private final Pose controlScoreToA1 = pose(114.56935483870969, 32.40806451612903, 0);
-    private final Pose control2ScoreToA1 = pose(125.861, 39.135, 0);
+    private final Pose pickupA1Pose = pose(135.8256, 11.1409, 0);
+    private final Pose controlScoreToA1 = pose(125.861, 39.135, 0);
+    private final Pose control2ScoreToA1 = pose(140.0281, 2.06603, 0);
     private final Pose scoreAfterA1Pose = pose(89.000, 12.000, -108.2);//-107.5
     private final Pose controlA1ToScore = pose(120.857, 17.619, 0);
     private static final long A1_PICKUP_DWELL_MS = 300;
-    private static final long A1_CHASSIS_SETTLE_MS = 300;
+    private static final long A1_CHASSIS_SETTLE_MS = 400;
 
     // Extra final-row pickup inserted after A1 is scored and before cycle B1.
     private final Pose p07RowThreeReady = pose(91.29032258064515, 36.000, 0);
     private final Pose p08RowThreePickup = pose(132.000, 36.000, 0);
-    private static final long FINAL_ROW_PICKUP_DWELL_MS = 300;
+    private static final long FINAL_ROW_PICKUP_DWELL_MS = 175;
     private static final long FINAL_ROW_CHASSIS_SETTLE_MS = 300;
 
     private final Pose prePickupB1Pose = pose(109.548, 13.465, 40);
-    private final Pose pickupB1Pose = pose(130.17390322580644, 48.531806451612916, 50);
+    private final Pose pickupB1Pose = pose(136.3360, 46.2495, 70);
     private final Pose controlPrePickupB1ToPickupB1 =
             pose(134.42516129032254, 11.639774193548401, 40);
     private final Pose scoreAfterB1Pose = pose(89.000, 12.500, -108);//108
@@ -53,7 +53,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private static final long A2_CHASSIS_SETTLE_MS = 300;
 
     private final Pose prePickupB2Pose = pose(109.548, 13.465, 40);
-    private final Pose pickupB2Pose = pose(130.17390322580644, 48.531806451612916, 50);
+    private final Pose pickupB2Pose = pose(133.5972, 46.706, 50);
     private final Pose controlPrePickupB2ToPickupB2 =
             pose(134.42516129032254, 11.639774193548401, 40);
     private final Pose scoreAfterB2Pose = pose(89.000, 12.500, -109);
@@ -70,7 +70,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     private static final long A3_CHASSIS_SETTLE_MS = 300;
 
     private final Pose prePickupB3Pose = pose(109.548, 13.465, 40);
-    private final Pose pickupB3Pose = pose(129.261, 46.706, 50);
+    private final Pose pickupB3Pose = pose(136.1077, 42.3697, 70);
     private final Pose controlPrePickupB3ToPickupB3 =
             pose(134.42516129032254, 11.639774193548401, 40);
     private final Pose scoreAfterB3Pose = pose(89.000, 12.500, -109);
@@ -119,7 +119,7 @@ public final class RedAutoOcho extends PathStateAutoBase {
     @Override
     protected void buildPaths() {
         preload = line(startPose, preloadScorePose);
-        scoreToA1 = curve(preloadScorePose, control2ScoreToA1, pickupA1Pose);
+        scoreToA1 = curve(preloadScorePose, controlScoreToA1,control2ScoreToA1, pickupA1Pose);
         a1ToScore = curve(pickupA1Pose, controlA1ToScore, scoreAfterA1Pose);
         scoreToFinalRowReady = line(scoreAfterA1Pose, p07RowThreeReady);
         collectFinalRow = line(p07RowThreeReady, p08RowThreePickup);
