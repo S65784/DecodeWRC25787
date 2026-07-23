@@ -222,7 +222,7 @@ public abstract class DecodeTeleOpBase extends OpMode {
 
         if (offsetLeftPressed.update(gamepad2.dpad_left)) {
             if (farShot) {
-                offset -= DecodeConfig.FAR_OFFSET_STEP_RAD;
+                offset += DecodeConfig.FAR_OFFSET_STEP_RAD;//-
                 aimOffsetChanged = true;
             } else {
                 lastNotice = "Far offset ignored: distance is below 90 in";
@@ -230,7 +230,7 @@ public abstract class DecodeTeleOpBase extends OpMode {
         }
         if (offsetRightPressed.update(gamepad2.dpad_right)) {
             if (farShot) {
-                offset += DecodeConfig.FAR_OFFSET_STEP_RAD;
+                offset -= DecodeConfig.FAR_OFFSET_STEP_RAD;//+
                 aimOffsetChanged = true;
             } else {
                 lastNotice = "Far offset ignored: distance is below 90 in";
