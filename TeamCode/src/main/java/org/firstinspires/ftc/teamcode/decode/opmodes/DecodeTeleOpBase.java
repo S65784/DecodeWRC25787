@@ -64,6 +64,7 @@ public abstract class DecodeTeleOpBase extends OpMode {
     private final RisingEdge offsetResetPressed = new RisingEdge();
     private final RisingEdge velocityUpPressed = new RisingEdge();
     private final RisingEdge velocityDownPressed = new RisingEdge();
+    private final RisingEdge velocityResetPressed = new RisingEdge();
 
     private Follower follower;
     private IMU imu;
@@ -214,6 +215,12 @@ public abstract class DecodeTeleOpBase extends OpMode {
         updateTelemetry(pose, solution);
     }
 
+    /**
+     * Both trims can be edited from anywhere on the field. Neither one changes the shot until
+     * the robot is at or beyond {@link #FAR_ADJUSTMENT_MIN_DISTANCE_INCHES}; that gate stays in
+     * {@link AutoAimController#update} and {@link #applyFarVelocityOffset}. Here the distance is
+     * only used to tell the operator whether the value they just set is live yet.
+     */
     private void updateFarAdjustments(double distance) {
         boolean farShot = distance >= FAR_ADJUSTMENT_MIN_DISTANCE_INCHES;
         double offset = autoAim.getFarOffsetRadians();
@@ -221,20 +228,12 @@ public abstract class DecodeTeleOpBase extends OpMode {
         boolean velocityOffsetChanged = false;
 
         if (offsetLeftPressed.update(gamepad2.dpad_left)) {
-            if (farShot) {
-                offset += DecodeConfig.FAR_OFFSET_STEP_RAD;//-
-                aimOffsetChanged = true;
-            } else {
-                lastNotice = "Far offset ignored: distance is below 90 in";
-            }
+            offset += DecodeConfig.FAR_OFFSET_STEP_RAD;//-
+            aimOffsetChanged = true;
         }
         if (offsetRightPressed.update(gamepad2.dpad_right)) {
-            if (farShot) {
-                offset -= DecodeConfig.FAR_OFFSET_STEP_RAD;//+
-                aimOffsetChanged = true;
-            } else {
-                lastNotice = "Far offset ignored: distance is below 90 in";
-            }
+            offset -= DecodeConfig.FAR_OFFSET_STEP_RAD;//+
+            aimOffsetChanged = true;
         }
         if (offsetResetPressed.update(gamepad2.right_stick_button)) {
             offset = 0;
@@ -242,20 +241,16 @@ public abstract class DecodeTeleOpBase extends OpMode {
         }
 
         if (velocityUpPressed.update(gamepad2.dpad_up)) {
-            if (farShot) {
-                farVelocityOffsetTicksPerSecond += FAR_VELOCITY_STEP_TICKS_PER_SECOND;
-                velocityOffsetChanged = true;
-            } else {
-                lastNotice = "Far velocity ignored: distance is below 90 in";
-            }
+            farVelocityOffsetTicksPerSecond += FAR_VELOCITY_STEP_TICKS_PER_SECOND;
+            velocityOffsetChanged = true;
         }
         if (velocityDownPressed.update(gamepad2.dpad_down)) {
-            if (farShot) {
-                farVelocityOffsetTicksPerSecond -= FAR_VELOCITY_STEP_TICKS_PER_SECOND;
-                velocityOffsetChanged = true;
-            } else {
-                lastNotice = "Far velocity ignored: distance is below 90 in";
-            }
+            farVelocityOffsetTicksPerSecond -= FAR_VELOCITY_STEP_TICKS_PER_SECOND;
+            velocityOffsetChanged = true;
+        }
+        if (velocityResetPressed.update(gamepad2.left_stick_button)) {
+            farVelocityOffsetTicksPerSecond = 0;
+            velocityOffsetChanged = true;
         }
 
         if (aimOffsetChanged) {
@@ -268,7 +263,10 @@ public abstract class DecodeTeleOpBase extends OpMode {
                             farOffsetPreferenceKey(),
                             (float) autoAim.getFarOffsetRadians())
                     .apply();
-            lastNotice = "Far offset saved";
+            lastNotice = String.format(
+                    "Aim offset %+.2f deg%s",
+                    Math.toDegrees(autoAim.getFarOffsetRadians()),
+                    liveSuffix(farShot));
         }
         if (velocityOffsetChanged) {
             farVelocityOffsetTicksPerSecond = MathUtil.clamp(
@@ -281,9 +279,19 @@ public abstract class DecodeTeleOpBase extends OpMode {
                             (float) farVelocityOffsetTicksPerSecond)
                     .apply();
             lastNotice = String.format(
-                    "Far velocity saved: %+.0f ticks/s",
-                    farVelocityOffsetTicksPerSecond);
+                    "Velocity offset %+.0f ticks/s%s",
+                    farVelocityOffsetTicksPerSecond,
+                    liveSuffix(farShot));
         }
+    }
+
+    /** Marks a saved trim that is stored but not in effect at the current distance. */
+    private static String liveSuffix(boolean farShot) {
+        return farShot
+                ? ""
+                : String.format(
+                        " (stored, applies at >=%.0f in)",
+                        FAR_ADJUSTMENT_MIN_DISTANCE_INCHES);
     }
 
     private ShotSolution applyFarVelocityOffset(ShotSolution tableSolution) {
@@ -332,8 +340,11 @@ public abstract class DecodeTeleOpBase extends OpMode {
         telemetry.addLine("G1: RB intake, LB outtake, X flywheel, Y fire");
         telemetry.addLine("G1: dpad-left heading reset (face away from own Driver Station)");
         telemetry.addLine("G2: A/Y pose reset point 1/2");
-        telemetry.addLine("G2: dpad L/R far aim trim (>=90 in), right-stick-click reset");
-        telemetry.addLine("G2: dpad U/D far shooter velocity +/-50 ticks/s (>=90 in)");
+        telemetry.addLine("G2: dpad L/R aim trim, right-stick-click zeroes it");
+        telemetry.addLine("G2: dpad U/D velocity +/-50 ticks/s, left-stick-click zeroes it");
+        telemetry.addLine(String.format(
+                "G2: both trims edit anywhere, both apply only at >=%.0f in",
+                FAR_ADJUSTMENT_MIN_DISTANCE_INCHES));
         telemetry.update();
     }
 
