@@ -149,11 +149,11 @@
       "id": "red-siete-07-07-score-2-pickup-a2",
       "name": "RED 07 SCORE 2 -> PICKUP A2",
       "endPoint": {
-        "x": 132.83041674893587,
+        "x": 133.5,
         "y": 11,
         "heading": "linear",
         "startDeg": -108,
-        "endDeg": 270,
+        "endDeg": 0,
         "locked": false
       },
       "controlPoints": [
@@ -177,7 +177,7 @@
         "x": 89,
         "y": 12,
         "heading": "linear",
-        "startDeg": 270,
+        "startDeg": 0,
         "endDeg": -109,
         "locked": false
       },
@@ -268,11 +268,11 @@
       "id": "red-siete-12-12-score-4-pickup-a3",
       "name": "RED 12 SCORE 4 -> PICKUP A3",
       "endPoint": {
-        "x": 132.83041674893587,
+        "x": 133.5,
         "y": 11,
         "heading": "linear",
         "startDeg": -109,
-        "endDeg": 270,
+        "endDeg": 0,
         "locked": false
       },
       "controlPoints": [
@@ -296,7 +296,7 @@
         "x": 89,
         "y": 12,
         "heading": "linear",
-        "startDeg": 270,
+        "startDeg": 0,
         "endDeg": -109,
         "locked": false
       },
@@ -337,8 +337,8 @@
       "id": "red-siete-15-15-prepickup-b3-pickup-b3",
       "name": "RED 15 PREPICKUP B3 -> PICKUP B3",
       "endPoint": {
-        "x": 129.261,
-        "y": 46.706,
+        "x": 131.08680645161292,
+        "y": 17.493096774193557,
         "heading": "linear",
         "startDeg": 40,
         "endDeg": 50,

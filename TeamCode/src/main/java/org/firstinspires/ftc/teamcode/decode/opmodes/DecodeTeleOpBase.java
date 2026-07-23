@@ -45,7 +45,7 @@ public abstract class DecodeTeleOpBase extends OpMode {
     private static final String FAR_OFFSET_KEY_PREFIX = "far_offset_";
     private static final String FAR_VELOCITY_OFFSET_KEY_PREFIX = "far_velocity_offset_";
     private static final double FAR_ADJUSTMENT_MIN_DISTANCE_INCHES = 90;
-    private static final double FAR_VELOCITY_STEP_TICKS_PER_SECOND = 50;
+    private static final double FAR_VELOCITY_STEP_TICKS_PER_SECOND = 25;
     private static final double FAR_VELOCITY_OFFSET_LIMIT_TICKS_PER_SECOND = 500;
 
     private final Alliance alliance;

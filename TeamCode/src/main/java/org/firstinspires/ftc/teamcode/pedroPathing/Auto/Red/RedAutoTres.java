@@ -1,5 +1,5 @@
 
-package org.firstinspires.ftc.teamcode.pedroPathing.Auto.Blue;
+package org.firstinspires.ftc.teamcode.pedroPathing.Auto.Red;
 
 import static org.firstinspires.ftc.teamcode.pedroPathing.Auto.AutoPaths.*;
 
@@ -13,55 +13,55 @@ import org.firstinspires.ftc.teamcode.decode.config.DecodeConfig;
 import org.firstinspires.ftc.teamcode.pedroPathing.Auto.PathStateAutoBase;
 
 /**
- * BlueAutoCero route reordered to Row 1, Row 2, Row 3, with two side-gate pushes.
+ * RedAutoCero route reordered to Row 1, Row 2, Row 3, with two side-gate pushes.
  *
- * <p>All non-gate coordinates and mechanism parameters come from BlueAutoCero.
- * Only c04/p04 and c08/p08 come from the tuned BlueAutoCinco gate paths.</p>
+ * <p>All non-gate coordinates and mechanism parameters come from RedAutoCero.
+ * Only c04/p04 and c08/p08 come from the tuned RedAutoCinco gate paths.</p>
  */
-@Autonomous(name = "蓝 AutoTres（近推门1）", group = "Competition")
-public final class BlueAutoTres extends PathStateAutoBase {
-    private final Pose p00Start = pose(20.543, 122.478, 315.2839);
-    private final Pose p01PreloadScore = pose(52.2, 89.8, -53.841815);
+@Autonomous(name = "红 AutoTres（近推门1）", group = "Competition")
+public final class RedAutoTres extends PathStateAutoBase {
+    private final Pose p00Start = pose(123.457, 122.478, -135.2839);
+    private final Pose p01PreloadScore = pose(91.8, 89.8, 233.841815);
     private final ShotParameters shot01Preload = shot(1369, 0.2474);
 
     // Row 1 (y = 83) runs first.
-    private final Pose p02RowOneReady = pose(54, 83.000, 180);
-    private final Pose p03RowOnePickup = pose(19, 83.000, 180);
+    private final Pose p02RowOneReady = pose(90, 83.000, 0);
+    private final Pose p03RowOnePickup = pose(125, 83.000, 0);
     //25787
     // Gate 1 coordinates remain unchanged.
-    private final Pose c04GateOne = pose(39.06772908366534, 69.4183266932271, -90);//114.93227091633466
-    private final Pose p04GateOne  = pose(144-127, 72, 180);
+    private final Pose c04GateOne = pose(104.93227091633466, 69.4183266932271, 270);//114.93227091633466
+    private final Pose p04GateOne  = pose(127, 72, 0);
     // Dwell held after the gate path ends, before leaving for the scoring pose. The gate path
     // holds its end pose, so the chassis keeps pressing the gate for this whole time.
     // TODO: Measure on the field. Long dwells stall the drive and sag the battery right before
     // a shot, which can push the next spin-up past AUTO_SHOT_TIMEOUT_MS.
     private static final long GATE_ONE_DWELL_MS = 1500;
 
-    private final Pose p05RowOneScore = pose(60, 83.000, -47.726311);
+    private final Pose p05RowOneScore = pose(84, 83.000, 227.726311);
     private final ShotParameters shot05RowOne = shot(1408, 0.2782);
 
     // Row 2 (y = 59) runs second.
-    private final Pose c06RowTwoReady = pose(56.31770967741934, 72.26816129032255, 180);
-    private final Pose p06RowTwoReady = pose(58.18709677419355, 59.000, 180);
-    private final Pose p07RowTwoPickup = pose(13, 59.000, 180);
+    private final Pose c06RowTwoReady = pose(87.68229032258066, 72.26816129032255, 0);
+    private final Pose p06RowTwoReady = pose(85.81290322580645, 59.000, 0);
+    private final Pose p07RowTwoPickup = pose(131, 59.000, 0);
 
     // Gate 2 coordinates remain unchanged.
-    private final Pose c08GateTwo = pose(38, 52.91444600280506, -90);//140-20
-    private final Pose p08GateTwo = pose(144-128, 72, 180);
+    private final Pose c08GateTwo = pose(106, 52.91444600280506, 270);//140-20
+    private final Pose p08GateTwo = pose(128, 72, 0);
     // TODO: Measure on the field. See the note on GATE_ONE_DWELL_MS.
     private static final long GATE_TWO_DWELL_MS = 2500;
 
-    private final Pose c09RowTwoScore = pose(45, 60.000, 180);
-    private final Pose p09RowTwoScore = pose(60, 83.000, -47.726311);
+    private final Pose c09RowTwoScore = pose(99, 60.000, 0);
+    private final Pose p09RowTwoScore = pose(84, 83.000, 227.726311);
     private final ShotParameters shot09RowTwo = shot(1408, 0.2782);
 
     // Row 3: no gate push.
-    private final Pose c10RowThreeReady = pose(57.16209677419354, 42.416129032258056, 180);
-    private final Pose p10RowThreeReady = pose(56.5, 36.000, 180);
-    private final Pose p11RowThreePickup = pose(12, 36.000, 180);
-    private final Pose p12FinalScore = pose(59.923, 107.923, -31.06761);
+    private final Pose c10RowThreeReady = pose(86.83790322580646, 42.416129032258056, 0);
+    private final Pose p10RowThreeReady = pose(87.5, 36.000, 0);
+    private final Pose p11RowThreePickup = pose(132, 36.000, 0);
+    private final Pose p12FinalScore = pose(84.077, 107.923, 211.06761);
     private final ShotParameters shot12Final = shot(1348, 0.2300);
-    private final Pose p13Park = pose(58, 108.9, 180);
+    private final Pose p13Park = pose(86, 108.9, 0);
 
     private static final double ROW_TWO_MAX_POWER = 0.85;
 
@@ -79,8 +79,8 @@ public final class BlueAutoTres extends PathStateAutoBase {
     private PathChain finalScore;
     private PathChain park;
 
-    @Override protected Alliance alliance() { return Alliance.BLUE; }
-    @Override protected String autoName() { return "BlueAutoTres"; }
+    @Override protected Alliance alliance() { return Alliance.RED; }
+    @Override protected String autoName() { return "RedAutoTres"; }
     @Override protected Pose startingPose() { return p00Start; }
     @Override protected void prepareInitialShot() {
         prepareShotForPose(p01PreloadScore, shot01Preload);
