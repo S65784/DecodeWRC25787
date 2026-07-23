@@ -29,12 +29,12 @@ public final class BlueAutoCinco extends PathStateAutoBase {
     //25787
     // Gate 1 coordinates remain unchanged.
     private final Pose c04GateOne = pose(39.06772908366534, 69.4183266932271, -90);//114.93227091633466
-    private final Pose p04GateOne  = pose(18, 72, 180);
+    private final Pose p04GateOne  = pose(144-127, 72, 180);
     // Dwell held after the gate path ends, before leaving for the scoring pose. The gate path
     // holds its end pose, so the chassis keeps pressing the gate for this whole time.
     // TODO: Measure on the field. Long dwells stall the drive and sag the battery right before
     // a shot, which can push the next spin-up past AUTO_SHOT_TIMEOUT_MS.
-    private static final long GATE_ONE_DWELL_MS = 1200;
+    private static final long GATE_ONE_DWELL_MS = 1500;
 
     private final Pose p05RowOneScore = pose(60, 83.000, -47.726311);
     private final ShotParameters shot05RowOne = shot(1408, 0.2782);
@@ -46,7 +46,7 @@ public final class BlueAutoCinco extends PathStateAutoBase {
 
     // Gate 2 coordinates remain unchanged.
     private final Pose c08GateTwo = pose(38, 52.91444600280506, -90);//140-20
-    private final Pose p08GateTwo = pose(18.5, 72, 180);
+    private final Pose p08GateTwo = pose(144-128, 72, 180);
     // TODO: Measure on the field. See the note on GATE_ONE_DWELL_MS.
     private static final long GATE_TWO_DWELL_MS = 2500;
 

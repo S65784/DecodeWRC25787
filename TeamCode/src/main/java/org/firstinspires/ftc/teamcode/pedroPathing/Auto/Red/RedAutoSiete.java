@@ -36,7 +36,7 @@ public final class RedAutoSiete extends PathStateAutoBase {
     private static final long B1_PICKUP_DWELL_MS = 250;
     private static final long B1_CHASSIS_SETTLE_MS = 300;
 
-    private final Pose pickupA2Pose = pose(132.83041674893587, 11, 270);
+    private final Pose pickupA2Pose = pose(133.5, 11, 0);
     private final Pose control2ScoreToA2 = pose(140.61762772930666, 28.464703606145186, 0);
     private final Pose scoreAfterA2Pose = pose(89.000, 12.000, -109);
     private final Pose controlA2ToScore = pose(120.857, 17.619, 0);
@@ -52,7 +52,7 @@ public final class RedAutoSiete extends PathStateAutoBase {
     private static final long B2_PICKUP_DWELL_MS = 200;
     private static final long B2_CHASSIS_SETTLE_MS = 300;
 
-    private final Pose pickupA3Pose = pose(132.83041674893587, 11, 270);
+    private final Pose pickupA3Pose = pose(133.5, 11, 0);
     private final Pose control2ScoreToA3 = pose(140.38940192285503, 28.464703606145186, 0);
     private final Pose scoreAfterA3Pose = pose(89.000, 12.000, -109);
     private final Pose controlA3ToScore = pose(120.857, 17.619, 0);
@@ -60,7 +60,7 @@ public final class RedAutoSiete extends PathStateAutoBase {
     private static final long A3_CHASSIS_SETTLE_MS = 300;
 
     private final Pose prePickupB3Pose = pose(109.548, 13.465, 40);
-    private final Pose pickupB3Pose = pose(129.261, 46.706, 50);
+    private final Pose pickupB3Pose = pose(131.08680645161292, 17.493096774193557, 50);
     private final Pose controlPrePickupB3ToPickupB3 =
             pose(134.42516129032254, 11.639774193548401, 40);
     private final Pose scoreAfterB3Pose = pose(89.000, 12.500, -109);
